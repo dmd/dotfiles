@@ -1,2 +1,2 @@
-vim/.vim/autoload/
-vim/.vim/plugged
+base/.vim/autoload/
+base/.vim/plugged/
