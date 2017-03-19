@@ -50,9 +50,8 @@ set laststatus=2
 set ruler
 set showcmd
 
-" kj/jk as ESC
+" jk as ESC
 inoremap jk <ESC>
-inoremap kj <ESC>
 
 "disable Ex mode
 nnoremap Q <nop>
