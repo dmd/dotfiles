@@ -1,7 +1,8 @@
 alias ag=ack-grep
 alias ls='ls --color'
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
-export PATH=$HOME/.rvm/bin:$PATH
+export PERL5LIB=$HOME/local/share/perl
+export PATH=$HOME/.rvm/bin:$HOME/local/bin:$PATH
 export TZ=US/Eastern
 . $HOME/bin/z/z.sh
 
