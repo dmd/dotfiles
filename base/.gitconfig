@@ -1,1 +1,23 @@
-/Users/dmd/Documents/config/gitconfig
+[core]
+    excludesfile = ~/.gitignore
+
+[alias]
+    co = checkout
+    br = branch
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    undo = checkout --
+    undocommit = reset --soft HEAD^
+    d = diff
+    ci = commit -a
+    st = status
+[push]
+    default = matching
+[branch]
+    autosetuprebase = always
+[pull]
+    rebase = true
+
+[include]
+    path = ~/.gitconfig_user
+
