@@ -6,6 +6,5 @@ export PATH=$HOME/.rvm/bin:$HOME/local/bin:$PATH
 export TZ=US/Eastern
 . $HOME/bin/z/z.sh
 
-# test if this can be include TODO
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+include $HOME/.rvm/scripts/rvm
 unset GEM_HOME
