@@ -1,0 +1,11 @@
+. `brew --prefix`/etc/profile.d/z.sh
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+alias j=z
+alias ls='ls -G'
+alias l='ls -G'
+alias mtr='sudo mtr --curses'
+alias books="rsync -r dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"

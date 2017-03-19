@@ -1,0 +1,10 @@
+alias ag=ack-grep
+alias ls='ls --color'
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
+export PATH=$HOME/.rvm/bin:$PATH
+export TZ=US/Eastern
+. $HOME/bin/z/z.sh
+
+# test if this can be include TODO
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+unset GEM_HOME
