@@ -1,6 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
-
+    editor = vi
 [alias]
     co = checkout
     br = branch
