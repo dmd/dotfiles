@@ -34,11 +34,12 @@ set backspace=indent,eol,start
 set hlsearch incsearch showmatch
 set smarttab tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set number
+set cursorline
 set nojoinspaces
 set encoding=utf8
 set ignorecase smartcase
 set wildmenu wildmode=list:longest
-set scrolloff=2
+set scrolloff=3
 set clipboard=unnamed
 set foldmethod=syntax
 set foldlevelstart=20
@@ -53,7 +54,7 @@ set showcmd
 " jk as ESC
 inoremap jk <ESC>
 
-"disable Ex mode
+" disable Ex mode
 nnoremap Q <nop>
 
 " the trailing // makes it more better.
@@ -62,3 +63,4 @@ set directory=/tmp//
 au BufRead,BufNewFile *.dml       set filetype=dml
 au BufRead,BufNewFile *.dmlscript set filetype=dml
 au BufRead,BufNewFile *.xfr       set filetype=dml
+
