@@ -34,7 +34,7 @@ set backspace=indent,eol,start
 set hlsearch incsearch showmatch
 set smarttab tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set number
-set cursorline
+" set cursorline
 set nojoinspaces
 set encoding=utf8
 set ignorecase smartcase
@@ -64,3 +64,6 @@ au BufRead,BufNewFile *.dml       set filetype=dml
 au BufRead,BufNewFile *.dmlscript set filetype=dml
 au BufRead,BufNewFile *.xfr       set filetype=dml
 
+" execute m_eval on region
+inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
+map <F5> V<bar>:!vimev<CR><bar>G
