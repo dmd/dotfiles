@@ -10,6 +10,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-bufferline'
 call plug#end()
 
 let g:airline#extensions#whitespace#enabled = 0
@@ -29,6 +31,7 @@ endif
 highlight LineNr ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 
 set tags=./tags;/
+set hidden  "allow opening a new buffer, hiding the old one
 set history=1000
 set backspace=indent,eol,start
 set hlsearch incsearch showmatch
