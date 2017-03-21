@@ -16,6 +16,7 @@ Plug 'bling/vim-bufferline'
 call plug#end()
 
 let g:airline_theme='murmur'
+let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
 
 if has('gui_running') || &t_Co > 2
   set background=dark
