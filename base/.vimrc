@@ -8,13 +8,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
 endif
 call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-bufferline'
 call plug#end()
 
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme='murmur'
 
 if has('gui_running') || &t_Co > 2
   set background=dark
