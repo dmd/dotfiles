@@ -10,7 +10,6 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-bufferline'
