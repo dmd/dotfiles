@@ -11,8 +11,8 @@ export DISPLAY=ddrucker-7.abinitio.com:0.0
 alias ic='ssh ic-linux1'
 alias tw='tmux new-window -n windows ssh ddrucker-7'
 alias tn='tmux new-window'
-alias ti='tmux new-window -n irc ssh -t dev.host /usr/bin/weechat'
-alias irc='ssh -t dev.host /usr/bin/weechat'
+alias ti='tmux new-window -n irc ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
+alias irc='ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias icp='ssh ic-prod1'
 alias icd='sudo su - icdaemon'
 
