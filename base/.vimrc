@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-bufferline'
+Plug 'fidian/hexmode'
 call plug#end()
 
 let g:airline_theme='murmur'
