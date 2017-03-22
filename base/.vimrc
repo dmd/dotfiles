@@ -71,5 +71,5 @@ au BufRead,BufNewFile *.xfr       set filetype=dml
 
 " execute m_eval on region
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
-map <F5> V<bar>:!vimev<CR><bar>G
+noremap <F5> V<bar>:!vimev<CR><bar>G
 
