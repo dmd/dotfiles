@@ -73,5 +73,3 @@ au BufRead,BufNewFile *.xfr       set filetype=dml
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
 map <F5> V<bar>:!vimev<CR><bar>G
 
-" use shift key to select
-behave mswin
