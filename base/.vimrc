@@ -73,3 +73,5 @@ au BufRead,BufNewFile *.xfr       set filetype=dml
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
 noremap <F5> V<bar>:!vimev<CR><bar>G
 
+" enable mouse
+set mouse=a
