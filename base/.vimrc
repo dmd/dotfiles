@@ -23,7 +23,7 @@ if has('gui_running') || &t_Co > 2
   syntax enable
   colorscheme torte
   if has('mac')
-      set guifont=monaco:h13
+      set guifont=monaco:h12
   elseif has('gui_gtk2')
       set guifont=Inconsolata\ 20
       set guioptions-=T  "no toolbar
@@ -72,3 +72,6 @@ au BufRead,BufNewFile *.xfr       set filetype=dml
 " execute m_eval on region
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
 map <F5> V<bar>:!vimev<CR><bar>G
+
+" use shift key to select
+behave mswin
