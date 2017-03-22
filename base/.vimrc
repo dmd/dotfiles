@@ -1,4 +1,5 @@
 set nocp
+set clipboard=exclude:.*  "set clipboard=unnamed  is really slow
 filetype off
 let $GIT_SSL_NO_VERIFY = 'true'
 
@@ -46,7 +47,6 @@ set encoding=utf8
 set ignorecase smartcase
 set wildmenu wildmode=list:longest
 set scrolloff=3
-set clipboard=unnamed
 set foldmethod=syntax
 set foldlevelstart=20
 
