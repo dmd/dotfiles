@@ -9,14 +9,18 @@ endif
 call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ervandew/supertab'              " tab completion of words
-    Plug 'airblade/vim-gitgutter'         " git changes in gutter
-    Plug 'bling/vim-bufferline'           " multiple buffers listed in line
-    Plug 'fidian/hexmode'                 " :Hexmode
-    Plug 'mhinz/vim-startify'             " start menu
-    Plug 'tpope/vim-rsi'                  " readline style insertion, C-a C-e etc.
-    Plug 'terryma/vim-multiple-cursors'   " C-n for multiple cursors on match
+    Plug 'ervandew/supertab'               " tab completion of words
+    Plug 'airblade/vim-gitgutter'          " git changes in gutter
+    Plug 'bling/vim-bufferline'            " multiple buffers listed in line
+    Plug 'fidian/hexmode'                  " :Hexmode
+    Plug 'mhinz/vim-startify'              " start menu
+    Plug 'tpope/vim-rsi'                   " readline style insertion, C-a C-e etc.
+    Plug 'terryma/vim-multiple-cursors'    " C-n for multiple cursors on match
+    Plug 'ConradIrwin/vim-bracketed-paste' "automatically set paste
 call plug#end()
+
+" better % matching
+runtime macros/matchit.vim
 
 let g:airline_theme='murmur'
 let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
@@ -38,10 +42,13 @@ endif
 highlight LineNr ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 
 
+" cursorline, but not in insert mode
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
+
 set encoding=utf-8
 set autoindent                         " Indent at the same level of the previous line
 set backspace=indent,eol,start         " Backspace for dummies
-set cursorline                         " Highlight current line
 
 set expandtab                          " Tabs are spaces, not tabs
 set smarttab                           " Smart tab
@@ -106,4 +113,22 @@ au BufRead,BufNewFile *.xfr       set filetype=dml
 " execute m_eval on region
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
 noremap <F5> V<bar>:!vimev<CR><bar>G
+
+" n always goes forward, N always goes backwards
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
+
+" clear matches, update syntax highlighting in C-l
+nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
+" change cursor style based on mode
+if empty($TMUX)
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+else
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+endif
 
