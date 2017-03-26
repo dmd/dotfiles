@@ -20,6 +20,7 @@ call plug#end()
 
 let g:airline_theme='murmur'
 let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
+let g:startify_custom_header =['Welcome to vim!']
 
 if has('gui_running') || &t_Co > 2
     set background=dark
