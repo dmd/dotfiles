@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'mhinz/vim-startify'              " start menu
     Plug 'tpope/vim-rsi'                   " readline style insertion, C-a C-e etc.
-    Plug 'terryma/vim-multiple-cursors'    " C-n for multiple cursors on match
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
 call plug#end()
 
