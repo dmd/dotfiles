@@ -1,5 +1,6 @@
 set nocp
-set clipboard=exclude:.*  "set clipboard=unnamed  is really slow
+"set clipboard=exclude:.*   " use this if below makes startup slow
+set clipboard=unnamed  " is really slow
 
 " Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
