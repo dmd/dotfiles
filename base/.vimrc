@@ -27,13 +27,11 @@ let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
 let g:startify_custom_header =['Welcome to vim!']
 let g:rsi_no_meta=1
 
+syntax enable
 if has('gui_running') || &t_Co > 2
     set background=dark
-    syntax enable
     colorscheme torte
-    if has('mac')
-        set guifont=monaco:h12
-    elseif has('gui_gtk2')
+    if has('gui_gtk2')
         set guifont=Inconsolata\ 20
         set guioptions-=T  "no toolbar
     endif
