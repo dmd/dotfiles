@@ -85,7 +85,7 @@ set whichwrap+=<,>,h,l                 " Allow backspace and cursor keys to cros
 set wildignore+=*/tmp/*,*.o,*.obj,*.so,*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip
 set wildmenu                           " Show list instead of just completing
 set wildmode=list:longest,full
-set updatetime=500                     " make gitgutter and others update faster
+set updatetime=800                     " make gitgutter and others update faster
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
