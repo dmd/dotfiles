@@ -1,6 +1,8 @@
 [core]
     excludesfile = ~/.gitignore
     editor = vim
+	pager = less -FRSX
+
 [alias]
     co = checkout
     br = branch
@@ -21,3 +23,9 @@
 [include]
     path = ~/.gitconfig_user
 
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
