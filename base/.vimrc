@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'bling/vim-bufferline'            " multiple buffers listed in line
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'mhinz/vim-startify'              " start menu
-    Plug 'tpope/vim-rsi'                   " readline style insertion, C-a C-e etc.
+    Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
 call plug#end()
 
