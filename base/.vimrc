@@ -1,6 +1,7 @@
 set nocp
 "set clipboard=exclude:.*   " use this if below makes startup slow
 set clipboard=unnamed  " is really slow
+let mapleader = ","
 
 " Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -119,4 +120,7 @@ nnoremap <expr> N  'nN'[v:searchforward]
 
 " clear matches, update syntax highlighting in C-l
 nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
+" nerdtree
+nmap <leader>n :NERDTreeToggle<cr>
 
