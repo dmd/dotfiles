@@ -8,6 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
 endif
 call plug#begin('~/.vim/plugged')
+    Plug 'scrooloose/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ervandew/supertab'               " tab completion of words
