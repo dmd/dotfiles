@@ -88,6 +88,7 @@ set wildignore+=*/tmp/*,*.o,*.obj,*.so,*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zi
 set wildmenu                           " Show list instead of just completing
 set wildmode=list:longest,full
 set updatetime=800                     " make gitgutter and others update faster
+set cryptmethod=blowfish2              " use not completely awful encryption
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
