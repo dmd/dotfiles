@@ -125,3 +125,5 @@ nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 " nerdtree
 nmap <leader>n :NERDTreeToggle<cr>
 
+" Filter on last search
+command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
