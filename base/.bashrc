@@ -1,4 +1,1 @@
-if [ -e ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
-
+[ -e ~/.bash_profile ] && . ~/.bash_profile
