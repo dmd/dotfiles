@@ -1,5 +1,6 @@
-export PATH=/ab/tools/bin:/u/ddrucker/node-v4.5.0/bin:$HOME/python32/bin:$JAVA_HOME/bin:$AB_HOME/bin:$HOME/bisect:$HOME/perl5/bin:$PATH
+export PATH=/ab/tools/bin:/u/ddrucker/node-v4.5.0/bin:$JAVA_HOME/bin:$HOME/bisect:$HOME/perl5/bin:$PATH:$AB_HOME/bin
 export LD_LIBRARY_PATH=$AB_HOME/lib:$LD_LIBRARY_PATH
+export PATH=$HOME/python32/bin:$PATH
 export PYTHONPATH=/u/ddrucker/python32/lib/python2.7/site-packages
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:/u/ddrucker/perl5"
 export PERL_MB_OPT="--install_base /u/ddrucker/perl5"
