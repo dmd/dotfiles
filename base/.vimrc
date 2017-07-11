@@ -1,6 +1,6 @@
 set nocp
-"set clipboard=exclude:.*   " use this if below makes startup slow
-set clipboard=unnamed  " is really slow
+set clipboard=exclude:.*   " use this if below makes startup slow
+"set clipboard=unnamed  " is really slow
 let mapleader = ","
 
 " Plugins
@@ -9,16 +9,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
 endif
 call plug#begin('~/.vim/plugged')
-    Plug 'scrooloose/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ervandew/supertab'               " tab completion of words
     Plug 'airblade/vim-gitgutter'          " git changes in gutter
     Plug 'bling/vim-bufferline'            " multiple buffers listed in line
     Plug 'fidian/hexmode'                  " :Hexmode
-    Plug 'mhinz/vim-startify'              " start menu
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
+"    Plug 'mhinz/vim-startify'              " start menu
+"    Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " better % matching
