@@ -1,3 +1,8 @@
+export AB_HOME=/usr/local/abinitio-V3-3-3-0
+export AB_APPLICATION_HUB=/usr/local/abinitio-app-hub
+
+export GIT_SSL_NO_VERIFY=true
+
 export PATH=/ab/tools/bin:/u/ddrucker/node-v4.5.0/bin:$JAVA_HOME/bin:$HOME/bisect:$HOME/perl5/bin:$PATH:$AB_HOME/bin
 export LD_LIBRARY_PATH=$AB_HOME/lib:$LD_LIBRARY_PATH
 export PATH=$HOME/python32/bin:$PATH
@@ -10,12 +15,12 @@ export GOPATH=/u/ddrucker/go
 export PATH=$GOPATH/bin:$PATH
 export DISPLAY=ddrucker-7.abinitio.com:0.0
 
-alias ic='ssh ic-linux1'
+alias ic='ssh -Y ic-linux1'
 alias tw='tmux new-window -n windows ssh ddrucker-7'
 alias tn='tmux new-window'
 alias ti='tmux new-window -n irc ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias irc='ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
-alias icp='ssh icdaemon@ic-prod1'
+alias icp='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 
 # switch to a particular coop (on ic-linux1, typically)
