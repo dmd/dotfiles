@@ -41,10 +41,6 @@ endif
 highlight LineNr ctermfg=240 ctermbg=233 guifg=#585858 guibg=#121212
 
 
-" cursorline, but not in insert mode
-autocmd InsertLeave,WinEnter * set cursorline
-autocmd InsertEnter,WinLeave * set nocursorline
-
 set encoding=utf-8
 set autoindent                         " Indent at the same level of the previous line
 set backspace=indent,eol,start         " Backspace for dummies
