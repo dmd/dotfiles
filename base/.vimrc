@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
 "    Plug 'mhinz/vim-startify'              " start menu
-"    Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " better % matching
