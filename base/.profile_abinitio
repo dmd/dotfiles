@@ -16,11 +16,11 @@ export PATH=$GOPATH/bin:$PATH
 export DISPLAY=ddrucker-7.abinitio.com:0.0
 
 alias ic='ssh -Y ic-linux1'
-alias tw='tmux new-window -n windows ssh ddrucker-7'
-alias tn='tmux new-window'
+alias ic7='ssh -Y ic-linux7'
 alias ti='tmux new-window -n irc ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias irc='ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
-alias icp='ssh -Y icdaemon@ic-prod1'
+alias icp='ssh -Y ic-prod1'
+alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 
 # switch to a particular coop (on ic-linux1, typically)
