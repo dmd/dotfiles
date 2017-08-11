@@ -1,6 +1,6 @@
 set nocp
-set clipboard=exclude:.*   " use this if below makes startup slow
-"set clipboard=unnamed  " is really slow
+"set clipboard=exclude:.*   " use this if below makes startup slow
+set clipboard=unnamed  " is really slow
 let mapleader = ","
 
 " Plugins
