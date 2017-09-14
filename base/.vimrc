@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
-"    Plug 'mhinz/vim-startify'              " start menu
     Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -77,7 +76,6 @@ set scrolloff=3                        " Minumum lines to keep above and below c
 set shortmess=aoOtTI
 set showcmd                            " Show partial commands in status line and Selected characters/lines in visual mode
 set showmatch                          " Show matching brackets/parentthesis
-set tags=./tags;/
 set visualbell
 set whichwrap+=<,>,h,l                 " Allow backspace and cursor keys to cross line boundaries
 set wildignore+=*/tmp/*,*.o,*.obj,*.so,*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zip
@@ -88,10 +86,6 @@ set updatetime=800                     " make gitgutter and others update faster
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command! W w !sudo tee % > /dev/null
 
 " jk as ESC
 inoremap jk <ESC>
@@ -120,5 +114,3 @@ nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 " nerdtree
 nmap <leader>n :NERDTreeToggle<cr>
 
-" Filter on last search
-command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
