@@ -69,8 +69,6 @@ set ttymouse=xterm2                    " drag around vim splits inside tmux spli
 set mousehide                          " Hide the mouse cursor while typing
 set nojoinspaces
 set number                             " Line numbers on
-set relativenumber                     " Relative numbers on
-set ruler                              " Show the ruler
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
 set shortmess=aoOtTI
