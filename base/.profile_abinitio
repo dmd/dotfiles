@@ -41,3 +41,7 @@ ch() {
     export LD_LIBRARY_PATH=$AB_HOME/lib:$ORIGLD
     m_env -v
 }
+setabhome() {
+    export AB_HOME=$1
+    export PATH="$AB_HOME/bin":$PATH
+}
