@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ervandew/supertab'               " tab completion of words
     Plug 'airblade/vim-gitgutter'          " git changes in gutter
-    Plug 'bling/vim-bufferline'            " multiple buffers listed in line
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
@@ -25,7 +24,6 @@ runtime macros/matchit.vim
 
 let g:airline_theme='murmur'
 let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
-let g:startify_custom_header =['Welcome to vim!']
 
 syntax enable
 if has('gui_running') || &t_Co > 2
@@ -68,7 +66,7 @@ set mouse+=a                           " Automatically enable mouse usage
 set ttymouse=xterm2                    " drag around vim splits inside tmux splits
 set mousehide                          " Hide the mouse cursor while typing
 set nojoinspaces
-set number                             " Line numbers on
+"set number                             " Line numbers on
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
 set shortmess=aoOtTI
