@@ -1,4 +1,4 @@
-export AB_HOME=/usr/local/abinitio-V3-3
+export AB_HOME=/usr/local/abinitio
 export AB_APPLICATION_HUB=/usr/local/abinitio-app-hub
 
 export P4CONFIG=.p4config
