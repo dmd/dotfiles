@@ -4,6 +4,7 @@ export AB_APPLICATION_HUB=/usr/local/abinitio-app-hub
 export P4CONFIG=.p4config
 export GIT_SSL_NO_VERIFY=true
 
+export JAVA_HOME=/usr/java/latest
 export PATH=/ab/tools/bin:/u/ddrucker/node-v4.5.0/bin:$JAVA_HOME/bin:$HOME/bisect:$HOME/perl5/bin:$PATH:$AB_HOME/bin
 export LD_LIBRARY_PATH=$AB_HOME/lib:$LD_LIBRARY_PATH
 export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:/u/ddrucker/perl5"
