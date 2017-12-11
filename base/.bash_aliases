@@ -1,3 +1,5 @@
+alias htop='TERM=screen htop'
+alias Grep=grep
 alias vi='vim' # --startuptime /tmp/vim_startup.log'
 alias l=ls
 alias lt='ls -ltra'
