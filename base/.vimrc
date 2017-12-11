@@ -11,6 +11,7 @@ endif
 call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-scripts/showhide.vim'        " zs show zh hide word under cursor :SHOW :HIDE
     Plug 'ervandew/supertab'               " tab completion of words
     Plug 'airblade/vim-gitgutter'          " git changes in gutter
     Plug 'fidian/hexmode'                  " :Hexmode
