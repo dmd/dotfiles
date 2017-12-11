@@ -23,6 +23,8 @@ alias icp='ssh -Y ic-prod1'
 alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 
+alias vi=vimx
+
 # switch to a particular coop (on ic-linux1, typically)
 ch() {
     VERSION=$(echo $1 | awk --posix '/^2[0-9]{2}$/  { print "2-" substr($0, 2, 2)};
