@@ -26,5 +26,5 @@ export GIT_PROMPT_END="\n$ "
 include ~/.bash-git-prompt/gitprompt.sh
 
 # host-specific settings
-include .profile_${HOSTNAME%%.*}
 [[ -f ~/.abinitiorc ]] && source ~/.profile_abinitio
+include .profile_${HOSTNAME%%.*}
