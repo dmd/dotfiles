@@ -66,7 +66,7 @@ set mouse+=a                           " Automatically enable mouse usage
 set ttymouse=xterm2                    " drag around vim splits inside tmux splits
 set mousehide                          " Hide the mouse cursor while typing
 set nojoinspaces
-"set number                             " Line numbers on
+set relativenumber                     " Line numbers on
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
 set shortmess=aoOtTI
@@ -89,7 +89,7 @@ inoremap jk <ESC>
 " disable Ex mode
 nnoremap Q <nop>
 
-" the trailing // makes it more better.
+" the trailing // makes it use complete path (foo/bar becomes foo%bar)
 set directory=/tmp//
 
 au BufRead,BufNewFile *.dml       set filetype=dml
@@ -106,7 +106,3 @@ nnoremap <expr> N  'nN'[v:searchforward]
 
 " clear matches, update syntax highlighting in C-l
 nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
-
-" nerdtree
-nmap <leader>n :NERDTreeToggle<cr>
-
