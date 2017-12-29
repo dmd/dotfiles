@@ -95,6 +95,7 @@ set directory=/tmp//
 au BufRead,BufNewFile *.dml       set filetype=dml
 au BufRead,BufNewFile *.dmlscript set filetype=dml
 au BufRead,BufNewFile *.xfr       set filetype=dml
+au BufRead,BufNewFile *.run       set filetype=abtrace
 
 " execute m_eval on region
 inoremap <F5> <ESC>V<bar>:!vimev<CR><bar>G
