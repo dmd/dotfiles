@@ -9,4 +9,6 @@ alias j=z
 alias ls='ls -G'
 alias l='ls -G'
 alias mtr='sudo mtr --curses'
-alias books="rsync -r dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
+alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
+
+. ~/.homebrew_token
