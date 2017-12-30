@@ -66,7 +66,6 @@ set mouse+=a                           " Automatically enable mouse usage
 set ttymouse=xterm2                    " drag around vim splits inside tmux splits
 set mousehide                          " Hide the mouse cursor while typing
 set nojoinspaces
-set relativenumber                     " Line numbers on
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
 set shortmess=aoOtTI
@@ -78,6 +77,14 @@ set wildignore+=*/tmp/*,*.o,*.obj,*.so,*swp,*.class,*.pyc,*.png,*.jpg,*.gif,*.zi
 set wildmenu                           " Show list instead of just completing
 set wildmode=list:longest,full
 set updatetime=800                     " make gitgutter and others update faster
+
+" hybrid line numbering
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
