@@ -1,0 +1,3 @@
+setabhome /usr/local/abinitio-V3-3-3-1
+export JAVA_HOME=/ab/java/java-Linux/jdk1.8
+export PATH=$JAVA_HOME/bin:$PATH
