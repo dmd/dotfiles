@@ -49,3 +49,15 @@ setabhome() {
     export AB_HOME=$1
     export PATH="$AB_HOME/bin":$PATH
 }
+
+# journal
+
+function log {
+JOURNALDIR=/u/ddrucker/journals
+JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
+if [[ $# == 0 ]]; then
+    vim +startinsert $JOURNALFILE
+else
+    echo $@ >> $JOURNALFILE
+fi
+}
