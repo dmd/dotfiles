@@ -57,6 +57,10 @@ JOURNALDIR=/u/ddrucker/journals
 JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
 if [[ $# == 0 ]]; then
     vim +startinsert $JOURNALFILE
+elif [[ $1 == "last" ]]; then
+    cat $(find $JOURNALDIR | sort | tail -1)
+elif [[ $1 == "editlast" || $1 == "elast" ]]; then
+    vim +startinsert $(find $JOURNALDIR | sort | tail -1)
 else
     echo $@ >> $JOURNALFILE
 fi
