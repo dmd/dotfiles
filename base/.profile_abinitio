@@ -57,10 +57,17 @@ JOURNALDIR=/u/ddrucker/journals
 JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
 if [[ $# == 0 ]]; then
     vim +startinsert $JOURNALFILE
-elif [[ $1 == "last" ]]; then
+elif [[ $1 == "last" && $# == 1 ]]; then
     cat $(find $JOURNALDIR | sort | tail -1)
 elif [[ $1 == "editlast" || $1 == "elast" ]]; then
     vim +startinsert $(find $JOURNALDIR | sort | tail -1)
+elif [[ $1 == "dump" && $# == 1 ]]; then
+    find $JOURNALDIR -type f -exec sh -c 'basename {} | sed "s,.txt,,;s,_, ,"' \; -exec cat {} \; -exec echo -e '\n---' \;
+elif [[ $1 == "dml" && $# == 1 ]]; then
+    echo "record
+  datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt;
+  string('---\n') text;
+end"
 else
     echo $@ >> $JOURNALFILE
 fi
