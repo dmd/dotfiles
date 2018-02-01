@@ -58,7 +58,11 @@ elif [[ $1 == "last" && $# == 1 ]]; then
 elif [[ $1 == "editlast" || $1 == "elast" ]]; then
     vim +startinsert $(find $JOURNALDIR | sort | tail -1)
 elif [[ $1 == "dump" && $# == 1 ]]; then
-    find $JOURNALDIR -type f -exec sh -c 'basename {} | sed "s,.txt,,;s,_, ,"' \; -exec cat {} \; -exec echo -e '\n---' \;
+    for i in $(find $JOURNALDIR -type f | sort); do
+        echo $(basename $i | sed "s,.txt,,;s,_, ,")
+        cat $i
+        echo -e '\n---'
+    done
 elif [[ $1 == "dml" && $# == 1 ]]; then
     echo "record
   datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt;
