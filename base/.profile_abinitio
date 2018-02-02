@@ -53,21 +53,31 @@ JOURNALDIR=/u/ddrucker/journals
 JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
 if [[ $# == 0 ]]; then
     vim +startinsert $JOURNALFILE
-elif [[ $1 == "last" && $# == 1 ]]; then
-    cat $(find $JOURNALDIR | sort | tail -1)
-elif [[ $1 == "editlast" || $1 == "elast" ]]; then
-    vim +startinsert $(find $JOURNALDIR | sort | tail -1)
-elif [[ $1 == "dump" && $# == 1 ]]; then
-    for i in $(find $JOURNALDIR -type f | sort); do
-        echo $(basename $i | sed "s,.txt,,;s,_, ,")
-        cat $i
-        echo -e '\n---'
-    done
-elif [[ $1 == "dml" && $# == 1 ]]; then
-    echo "record
-  datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt;
-  string('---\n') text;
-end"
+elif [[ $# == 1 ]]; then
+    case $1 in
+        last)
+            cat $(find $JOURNALDIR | sort | tail -1)
+            ;;
+        edit)
+            vim +startinsert $(find $JOURNALDIR | sort | tail -1)
+            ;;
+        dump)
+            for i in $(find $JOURNALDIR -type f | sort); do
+                echo $(basename $i | sed "s,.txt,,;s,_, ,")
+                cat $i
+                echo -e '\n---'
+            done
+            ;;
+        dml)
+            echo "record
+            datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt;
+            string('---\n') text;
+            end"
+            ;;
+        *)
+            >&2 echo "Usage: log [last|edit|dump|dml]"
+            ;;
+    esac
 else
     echo $@ >> $JOURNALFILE
 fi
