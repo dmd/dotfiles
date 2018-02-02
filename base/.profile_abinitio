@@ -55,6 +55,9 @@ if [[ $# == 0 ]]; then
     vim +startinsert $JOURNALFILE
 elif [[ $# == 1 ]]; then
     case $1 in
+        del)
+            rm $(find $JOURNALDIR | sort | tail -1)
+            ;;
         last)
             cat $(find $JOURNALDIR | sort | tail -1)
             ;;
