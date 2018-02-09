@@ -52,7 +52,7 @@ function log {
 JOURNALDIR=/u/ddrucker/journals
 JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
 if [[ $# == 0 ]]; then
-    vim +startinsert $JOURNALFILE
+    vim +startinsert "set fo=a|set wrap|set syntax=text" $JOURNALFILE
 elif [[ $# == 1 ]]; then
     case $1 in
         del)
@@ -62,7 +62,7 @@ elif [[ $# == 1 ]]; then
             cat $(find $JOURNALDIR | sort | tail -1)
             ;;
         edit)
-            vim +startinsert $(find $JOURNALDIR | sort | tail -1)
+            vim +startinsert "set fo=a|set wrap|set syntax=text" $(find $JOURNALDIR | sort | tail -1)
             ;;
         dump)
             for i in $(find $JOURNALDIR -type f | sort); do
