@@ -114,3 +114,6 @@ nnoremap <expr> N  'nN'[v:searchforward]
 
 " clear matches, update syntax highlighting in C-l
 nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
+" always jump to line number if present
+nnoremap gf gF
