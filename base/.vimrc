@@ -79,12 +79,14 @@ set wildmode=list:longest,full
 set updatetime=800                     " make gitgutter and others update faster
 
 " hybrid line numbering
-set number relativenumber
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+if v:version > 730
+    set number relativenumber
+    augroup numbertoggle
+        autocmd!
+        autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+        autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    augroup END
+endif
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
