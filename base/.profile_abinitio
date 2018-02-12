@@ -51,18 +51,22 @@ setabhome() {
 function log {
 JOURNALDIR=/u/ddrucker/journals
 JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
+JOURNALLAST=$(find $JOURNALDIR | sort | tail -1)
 if [[ $# == 0 ]]; then
-    vim +startinsert "set fo=a|set wrap|set syntax=text" $JOURNALFILE
+    vim -c "set fo=a|set wrap|set syntax=text" $JOURNALFILE
 elif [[ $# == 1 ]]; then
     case $1 in
         del)
-            rm $(find $JOURNALDIR | sort | tail -1)
+            rm $JOURNALLAST
             ;;
         last)
-            cat $(find $JOURNALDIR | sort | tail -1)
+            cat $JOURNALLAST
             ;;
         edit)
-            vim +startinsert "set fo=a|set wrap|set syntax=text" $(find $JOURNALDIR | sort | tail -1)
+            vim -c "set fo=a|set wrap|set syntax=text" $JOURNALLAST
+            ;;
+        rawedit)
+            vim $JOURNALLAST
             ;;
         dump)
             for i in $(find $JOURNALDIR -type f | sort); do
