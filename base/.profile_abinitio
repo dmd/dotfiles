@@ -11,8 +11,8 @@ export GOPATH=/u/ddrucker/go
 export PATH=$GOPATH/bin:$PATH
 export DISPLAY=ddrucker-7.abinitio.com:0.0
 
-alias ic='ssh -Y ic-linux1'
-alias ic7='ssh -Y ic-linux7'
+alias ic='ssh -Y -A ic-linux1'
+alias ic7='ssh -Y -A ic-linux7'
 alias ti='tmux new-window -n irc ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias irc='ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias icp='ssh -Y ic-prod1'
