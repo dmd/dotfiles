@@ -79,7 +79,7 @@ set wildmode=list:longest,full
 set updatetime=800                     " make gitgutter and others update faster
 
 " hybrid line numbering
-if v:version > 730
+if v:version > 703
     set number relativenumber
     augroup numbertoggle
         autocmd!
