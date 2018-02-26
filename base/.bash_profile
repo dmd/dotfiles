@@ -27,6 +27,7 @@ export GIT_PROMPT_END="\n$ "
 include ~/.bash-git-prompt/gitprompt.sh
 
 # fuzzy finder
+export FZF_DEFAULT_OPTS="-e"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # host-specific settings
