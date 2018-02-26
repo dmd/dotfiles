@@ -49,17 +49,22 @@ setabhome() {
 # journal
 JDIR=/u/ddrucker/journals
 JFILE=$JDIR/dmd.jrn
-alias loge='vi + $JFILE'
+function loge {
+    vi + $JFILE
+    if ! m_dump -string "record datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt; string('---\n') text; end" $JFILE -no-print-data; then
+        echo "You screwed up the format. You should probably fix it."
+    fi
+}
 function log {
-JTMP=$(mktemp)
-vim $JTMP
-if [[ -s $JTMP ]]; then
-    # there's stuff in it
-    echo $(date +'%Y-%m-%d %T') >> $JFILE
-    cat $JTMP >> $JFILE
-    echo -e "\n---" >> $JFILE
-    (cd $JDIR && git commit -a -m "journal update")
-fi
-rm $JTMP
+    JTMP=$(mktemp)
+    vim $JTMP
+    if [[ -s $JTMP ]]; then
+        # there's stuff in it
+        echo $(date +'%Y-%m-%d %T') >> $JFILE
+        cat $JTMP >> $JFILE
+        echo -e "\n---" >> $JFILE
+        (cd $JDIR && git commit -a -m "journal update")
+    fi
+    rm $JTMP
 }
 
