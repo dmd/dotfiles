@@ -47,45 +47,19 @@ setabhome() {
 }
 
 # journal
-
+JDIR=/u/ddrucker/journals
+JFILE=$JDIR/dmd.jrn
+alias loge='vi + $JFILE'
 function log {
-JOURNALDIR=/u/ddrucker/journals
-JOURNALFILE="$JOURNALDIR/$(date +'%Y-%m-%d_%T').txt"
-JOURNALLAST=$(find $JOURNALDIR | sort | tail -1)
-if [[ $# == 0 ]]; then
-    vim -c "set fo=a|set wrap|set syntax=text" $JOURNALFILE
-elif [[ $# == 1 ]]; then
-    case $1 in
-        del)
-            rm $JOURNALLAST
-            ;;
-        last)
-            cat $JOURNALLAST
-            ;;
-        edit)
-            vim -c "set fo=a|set wrap|set syntax=text" $JOURNALLAST
-            ;;
-        rawedit)
-            vim $JOURNALLAST
-            ;;
-        dump)
-            for i in $(find $JOURNALDIR -type f | sort); do
-                echo $(basename $i | sed "s,.txt,,;s,_, ,")
-                cat $i
-                echo -e '\n---'
-            done
-            ;;
-        dml)
-            echo "record
-            datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt;
-            string('---\n') text;
-            end"
-            ;;
-        *)
-            >&2 echo "Usage: log [last|edit|dump|dml]"
-            ;;
-    esac
-else
-    echo $@ >> $JOURNALFILE
+JTMP=$(mktemp)
+vim $JTMP
+if [[ -s $JTMP ]]; then
+    # there's stuff in it
+    echo $(date +'%Y-%m-%d %T') >> $JFILE
+    cat $JTMP >> $JFILE
+    echo -e "\n---" >> $JFILE
+    (cd $JDIR && git commit -a -m "journal update")
 fi
+rm $JTMP
 }
+
