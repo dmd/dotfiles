@@ -26,6 +26,9 @@ export GIT_PROMPT_START="\n\u@\e[33;1m\h\e[0m \e[34;1m\w\e[0m"
 export GIT_PROMPT_END="\n$ "
 include ~/.bash-git-prompt/gitprompt.sh
 
+# fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # host-specific settings
 [[ -f ~/.abinitiorc ]] && source ~/.profile_abinitio
 include .profile_${HOSTNAME%%.*}
