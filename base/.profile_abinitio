@@ -53,6 +53,9 @@ function loge {
     vi + $JFILE
     if ! m_dump -string "record datetime('YYYY-MM-DD HH24:MI:SS')('\n') dt; string('---\n') text; end" $JFILE -no-print-data; then
         echo "You screwed up the format. You should probably fix it."
+        echo "NOT doing a git commit!"
+    else 
+        (cd $JDIR && git commit -a -m "journal update")
     fi
 }
 function log {
