@@ -19,7 +19,10 @@ alias icp='ssh -Y ic-prod1'
 alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 
-alias vi=vimx
+if which vimx 2>/dev/null; then
+  alias vi=vimx
+fi
+alias n=npp
 
 # switch to a particular coop (on ic-linux1, typically)
 ch() {
