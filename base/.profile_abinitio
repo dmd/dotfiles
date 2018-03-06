@@ -19,7 +19,7 @@ alias icp='ssh -Y ic-prod1'
 alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 
-if which vimx 2>/dev/null; then
+if which vimx >/dev/null 2>&1; then
   alias vi=vimx
 fi
 alias n=npp
