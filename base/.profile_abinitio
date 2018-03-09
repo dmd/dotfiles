@@ -24,6 +24,11 @@ if which vimx >/dev/null 2>&1; then
 fi
 alias n=npp
 
+# https://raw.githubusercontent.com/iridakos/goto/master/goto.bash 
+# edit complete to answer to jj though
+source $HOME/bin/goto.bash
+alias jj=goto
+
 # switch to a particular coop (on ic-linux1, typically)
 ch() {
     VERSION=$(echo $1 | awk --posix '/^2[0-9]{2}$/  { print "2-" substr($0, 2, 2)};
