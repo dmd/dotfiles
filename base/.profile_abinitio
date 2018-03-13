@@ -24,10 +24,11 @@ if which vimx >/dev/null 2>&1; then
 fi
 alias n=npp
 
-# https://raw.githubusercontent.com/iridakos/goto/master/goto.bash 
-# edit complete to answer to jj though
-source $HOME/bin/goto.bash
+# https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
+# let complete answer for jj though
+source $HOME/bin/goto.sh
 alias jj=goto
+complete -o filenames -F _complete_goto_bash jj
 
 # switch to a particular coop (on ic-linux1, typically)
 ch() {
