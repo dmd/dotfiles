@@ -26,7 +26,7 @@ alias n=npp
 
 # https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
 # let complete answer for jj though
-source $HOME/bin/goto.sh
+source $HOME/bin/goto/goto.sh
 alias jj=goto
 complete -o filenames -F _complete_goto_bash jj
 
