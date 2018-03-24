@@ -1,7 +1,13 @@
-
+(setq auto-save-list-file-prefix nil)
 (menu-bar-mode 0)
 (setq auto-mode-alist (append '(("\\.run$" . xxtrace-mode)) auto-mode-alist))
-(load-library "/u/saletnik/public/xxtrace.el")
+
+(let ((xxtrace-highlight "/u/saletnik/public/xxtrace.el"))
+ (when (file-exists-p xxtrace-highlight)
+   (load-file xxtrace-highlight))
+)
+
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (custom-set-variables
