@@ -18,6 +18,7 @@ alias irc='ssh -t dev.host TERM=screen-256color /usr/bin/weechat'
 alias icp='ssh -Y ic-prod1'
 alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
+alias sandenv='. <(kvars)'
 
 if which vimx >/dev/null 2>&1; then
   alias vi=vimx
