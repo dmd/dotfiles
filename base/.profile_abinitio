@@ -19,6 +19,7 @@ alias icp='ssh -Y ic-prod1'
 alias icpd='ssh -Y icdaemon@ic-prod1'
 alias icd='sudo su - icdaemon'
 alias sandenv='. <(kvars)'
+alias lsofg='sudo /usr/sbin/lsof -n -F | lsofgraph |unflatten -l 1 -c 6 | dot -Tps | display ps:-'
 
 if which vimx >/dev/null 2>&1; then
   alias vi=vimx
