@@ -5,7 +5,7 @@ export P4CONFIG=.p4config
 export GIT_SSL_NO_VERIFY=true
 
 export JAVA_HOME=/usr/java/latest
-export PATH=/ab/tools/bin:/u/ddrucker/node-v4.5.0/bin:$JAVA_HOME/bin:$HOME/bisect:$PATH:$AB_HOME/bin
+export PATH=/ab/tools/bin:$HOME/node-v8.11.1/bin:$JAVA_HOME/bin:$HOME/bisect:$PATH:$AB_HOME/bin
 export LD_LIBRARY_PATH=$AB_HOME/lib:$LD_LIBRARY_PATH
 export GOPATH=/u/ddrucker/go
 export PATH=$GOPATH/bin:$PATH
