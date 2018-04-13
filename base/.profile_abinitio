@@ -82,3 +82,4 @@ function log {
     rm $JTMP
 }
 
+alias chnightly="setabhome /disk1/data/build/nightly/current/mpower"
