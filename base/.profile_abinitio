@@ -55,6 +55,7 @@ ch() {
 setabhome() {
     export AB_HOME=$1
     export PATH="$AB_HOME/bin":$PATH
+    m_env -v
 }
 
 # journal
