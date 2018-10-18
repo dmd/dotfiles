@@ -4,6 +4,8 @@ include () {
 
 include ~/.bash_aliases
 
+export ANSIBLE_NOCOWS=1
+
 export EDITOR=vim
 export VISUAL=vim
 export TERM=xterm-256color
