@@ -26,6 +26,10 @@ runtime macros/matchit.vim
 let g:airline_theme='murmur'
 let g:airline#extensions#hunks#enabled=0  "don't put changes in statusbar
 
+" Enable the list of buffers (with just filename)
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 syntax enable
 if has('gui_running') || &t_Co > 2
     set background=dark
