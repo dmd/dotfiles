@@ -9,10 +9,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
 endif
 call plug#begin('~/.vim/plugged')
+    Plug 'zxqfl/tabnine-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-scripts/showhide.vim'        " zs show zh hide word under cursor :SHOW :HIDE zn open all
-    Plug 'ervandew/supertab'               " tab completion of words
+    "Plug 'ervandew/supertab'               " tab completion of words
     Plug 'airblade/vim-gitgutter'          " git changes in gutter
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
