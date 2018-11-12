@@ -1,3 +1,0 @@
-export AB_HOME=/disk1/sand/carlf/base/unmodified-trunk/mpower
-export PATH=$AB_HOME/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/jre-1.8.0
