@@ -22,13 +22,8 @@ shopt -s cmdhist
 set completion-ignore-case On
 # PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
-if  [[ -f ~/.abinitiorc ]]; then
-    export PS1="\n\u@\e[33;1m\h\e[0m \e[34;1m\w\e[0m\n\$(if [ ! -z \${PROJECT_DIR+x} ]; then echo -e \e[32mPROJECT:\e[0m \$PROJECT_DIR; echo -e '\n'; fi)"'\$ '
-    export GIT_PROMPT_END="\$(if [ ! -z \${PROJECT_DIR+x} ]; then echo ; echo PROJECT: \$PROJECT_DIR; fi)"'\n$ '
-else
-    export PS1="\n\u@\e[33;1m\h\e[0m \e[34;1m\w\e[0m\n"'\$ '
-    export GIT_PROMPT_END="\n$ "
-fi
+export PS1="\n\u@\e[33;1m\h\e[0m \e[34;1m\w\e[0m\n"'\$ '
+export GIT_PROMPT_END="\n$ "
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_START="\n\u@\e[33;1m\h\e[0m \e[34;1m\w\e[0m"
 include ~/.bash-git-prompt/gitprompt.sh
