@@ -22,7 +22,7 @@ alias sandenv='. <(kvars)'
 alias lsofg='sudo /usr/sbin/lsof -n -F | lsofgraph |unflatten -l 1 -c 6 | dot -Tps | display ps:-'
 
 if which vimx >/dev/null 2>&1; then
-  alias vi=vimx
+  alias vi="vimx -X"
 fi
 alias n=npp
 
