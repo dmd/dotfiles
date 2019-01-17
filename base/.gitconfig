@@ -2,7 +2,6 @@
     excludesfile = ~/.gitignore
     editor = vim
     pager = less -FRSX
-    attributesfile = ~/.gitattributes
 [alias]
     co = checkout
     br = branch
@@ -30,5 +29,3 @@
   interactive = auto
   ui = true
 
-[diff "mp"]
-  command = gitasd
