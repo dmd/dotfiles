@@ -33,5 +33,4 @@ export FZF_DEFAULT_OPTS="-e"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # host-specific settings
-[[ -f ~/.abinitiorc ]] && source ~/.profile_abinitio
 include .profile_${HOSTNAME%%.*}
