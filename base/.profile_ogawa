@@ -1,1 +1,12 @@
+. `brew --prefix`/etc/profile.d/z.sh
+
+alias edges='ssh edges@3e.org'
 alias m='ssh micc'
+alias j=z
+alias ls='ls -G'
+alias l='ls -G'
+alias mtr='sudo mtr --curses'
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
