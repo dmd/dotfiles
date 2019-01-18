@@ -1,4 +1,3 @@
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 module load gcc
 module load sge
 FSLDIR=/cm/shared/fsl-5.0.10
@@ -6,4 +5,4 @@ FSLDIR=/cm/shared/fsl-5.0.10
 PATH=${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
 PATH=/cm/shared/anaconda/bin:${PATH}
 export FSLDIR PATH
-source ~proto/.bashrc.master
+. ~proto/.bashrc.master
