@@ -66,9 +66,9 @@ set incsearch                          " Find as you type search
 set laststatus=2                       " Always show status line
 set matchtime=5                        " Show matching time
 set modeline
-set mouse+=a                           " Automatically enable mouse usage
-set ttymouse=xterm2                    " drag around vim splits inside tmux splits
-set mousehide                          " Hide the mouse cursor while typing
+"set mouse+=a                           " Automatically enable mouse usage
+"set ttymouse=xterm2                    " drag around vim splits inside tmux splits
+"set mousehide                          " Hide the mouse cursor while typing
 set nojoinspaces
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
