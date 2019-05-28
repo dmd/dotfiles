@@ -5,6 +5,7 @@ alias irc='ssh -t dev.host weechat'
 alias sci='ssh-copy-id'
 alias edges='ssh edges@3e.org'
 alias m='ssh micc'
+alias x='ssh x5backup'
 alias j=z
 alias ls='ls -G'
 alias l='ls -G'
