@@ -6,3 +6,5 @@ PATH=${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
 PATH=/cm/shared/anaconda/bin:${PATH}
 export FSLDIR PATH
 . ~proto/.bashrc.master
+
+alias q='qstat -u "*"'
