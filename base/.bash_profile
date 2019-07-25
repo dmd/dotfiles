@@ -34,3 +34,5 @@ export FZF_DEFAULT_OPTS="-e"
 
 # host-specific settings
 include .profile_${HOSTNAME%%.*}
+
+[ -e ~/.bashrc ] && . ~/.bashrc
