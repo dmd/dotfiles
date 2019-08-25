@@ -8,8 +8,6 @@ alias m='ssh micc'
 alias x='ssh x5backup'
 alias j=z
 alias ls='ls -G'
-alias l='ls -G'
-alias mtr='sudo mtr --curses'
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion

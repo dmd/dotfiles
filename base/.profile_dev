@@ -1,4 +1,2 @@
 alias irc='rm $HOME/.weechat/weechat.log;weechat'
 alias ls='ls --color'
-alias ti='tmux new-window -n irc "TERM=screen-256color /usr/bin/weechat"'
-alias tt='utalk -s 4455'

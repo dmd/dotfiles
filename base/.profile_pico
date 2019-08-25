@@ -7,8 +7,6 @@ fi
 alias edges='ssh edges@3e.org'
 alias j=z
 alias ls='ls -G'
-alias l='ls -G'
-alias mtr='sudo mtr --curses'
 alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
 export PATH=/usr/local/miniconda3/bin:$PATH
 . ~/.homebrew_token
