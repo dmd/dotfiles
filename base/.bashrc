@@ -12,4 +12,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-export TZ=US/Eastern
+export TZ=America/New_York
