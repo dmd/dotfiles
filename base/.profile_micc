@@ -2,6 +2,6 @@ module load gcc
 module load sge
 export FSLDIR=/cm/shared/fsl-5.0.10
 . ${FSLDIR}/etc/fslconf/fsl.sh
-export PATH=/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
 alias q='qstat -u "*"'
 . ~proto/.bashrc.master
+export PATH=/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
