@@ -4,4 +4,4 @@ export FSLDIR=/cm/shared/fsl-5.0.10
 . ${FSLDIR}/etc/fslconf/fsl.sh
 alias q='qstat -u "*"'
 . ~proto/.bashrc.master
-export PATH=/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
+export PATH=/cm/local/apps/docker/current/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
