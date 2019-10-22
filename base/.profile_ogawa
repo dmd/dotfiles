@@ -2,11 +2,8 @@
 
 alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
 alias irc='ssh -t dev.host weechat'
-alias sci='ssh-copy-id'
-alias edges='ssh edges@3e.org'
 alias m='ssh micc'
 alias x='ssh x5backup'
-alias j=z
 alias ls='ls -G'
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
