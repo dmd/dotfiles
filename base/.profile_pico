@@ -13,3 +13,5 @@ export PATH=/usr/local/miniconda3/bin:$PATH
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
+
+. /usr/local/miniconda3/etc/profile.d/conda.sh
