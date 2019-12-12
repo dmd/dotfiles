@@ -28,23 +28,23 @@ alias irc='ssh -t dev.host weechat'
 alias dh='dirs -v'
 
 ## finally, per-host customizations
-if [[ $HOST == dev ]]; then
+if [[ $SHORT_HOST == dev ]]; then
     alias irc='rm $HOME/.weechat/weechat.log;weechat'
 fi
 
-if [[ $HOST == ogawa.mclean.harvard.edu ]]; then
+if [[ $SHORT_HOST == ogawa ]]; then
     alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
     alias m='ssh micc'
     alias x='ssh x5backup'
 fi
 
-if [[ $HOST == pico.local ]]; then
+if [[ $SHORT_HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
     . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
-if (( ${micchosts[(I)$HOST]} )); then
+if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias q='qstat -u "*"'
     . ~proto/.bashrc.master
     export PATH=/cm/local/apps/docker/current/bin/:/cm/local/apps/docker-compose/1.17.1/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
