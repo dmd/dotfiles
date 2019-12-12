@@ -25,6 +25,7 @@ alias vi='vim'  # not sure if needed
 alias mefi='ssh dev.host tail -20 linkwatcher/today.log'
 alias sci='ssh-copy-id'
 alias irc='ssh -t dev.host weechat'
+alias dh='dirs -v'
 
 ## finally, per-host customizations
 if [[ $HOST == dev ]]; then
