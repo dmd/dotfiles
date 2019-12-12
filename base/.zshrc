@@ -6,7 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=100000
 
-plugins=(git z)
+plugins=(git z fzf)
 
 source $ZSH/oh-my-zsh.sh
 
