@@ -1,3 +1,0 @@
-alias irc='rm $HOME/.weechat/weechat.log;weechat'
-alias ls='ls --color'
-PATH=~/.local/bin:$PATH
