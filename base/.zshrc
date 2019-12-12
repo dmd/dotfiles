@@ -44,3 +44,12 @@ if [[ $HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
 fi
 
+if [[ $HOST == micc ]]; then
+    module load gcc
+    module load sge
+    export FSLDIR=/cm/shared/fsl-5.0.10
+    . ${FSLDIR}/etc/fslconf/fsl.sh
+    alias q='qstat -u "*"'
+    . ~proto/.bashrc.master
+    export PATH=/cm/local/apps/docker/current/bin/:/cm/local/apps/docker-compose/1.17.1/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
+fi
