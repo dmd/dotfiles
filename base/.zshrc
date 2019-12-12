@@ -1,6 +1,10 @@
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="bira"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=100000
 plugins=(git z fzf docker)
@@ -45,3 +49,4 @@ if (( ${micchosts[(I)$HOST]} )); then
     . ~proto/.bashrc.master
     export PATH=/cm/local/apps/docker/current/bin/:/cm/local/apps/docker-compose/1.17.1/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
 fi
+
