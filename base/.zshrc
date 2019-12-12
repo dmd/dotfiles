@@ -2,12 +2,11 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="bira"
-
-HIST_STAMPS="yyyy-mm-dd"
-SAVEHIST=100000
 plugins=(git z fzf docker)
 source $ZSH/oh-my-zsh.sh
 
+HIST_STAMPS="yyyy-mm-dd"
+SAVEHIST=100000
 export TZ=America/New_York
 export PATH=~/bin:~/.local/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
 export ANSIBLE_NOCOWS=1
