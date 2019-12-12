@@ -1,13 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
 ZSH_THEME="bira"
-
-COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=100000
-
 plugins=(git z fzf)
-
 source $ZSH/oh-my-zsh.sh
 
 export TZ=America/New_York
@@ -19,7 +14,6 @@ export TERM=xterm-256color
 export LESS=-r
 
 bindkey -e 
-
 
 alias j=z
 alias edges='ssh edges@3e.org'
@@ -46,10 +40,6 @@ fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
 if (( ${micchosts[(I)$HOST]} )); then
-    module load gcc
-    module load sge
-    export FSLDIR=/cm/shared/fsl-5.0.10
-    . ${FSLDIR}/etc/fslconf/fsl.sh
     alias q='qstat -u "*"'
     . ~proto/.bashrc.master
     export PATH=/cm/local/apps/docker/current/bin/:/cm/local/apps/docker-compose/1.17.1/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
