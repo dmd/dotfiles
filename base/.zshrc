@@ -44,7 +44,8 @@ if [[ $HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
 fi
 
-if [[ $HOST == micc ]]; then
+micchosts=(micc node1 node2 node3 node4 node5)
+if (( ${micchosts[(I)$HOST]} )); then
     module load gcc
     module load sge
     export FSLDIR=/cm/shared/fsl-5.0.10
