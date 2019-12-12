@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="bira"
 HIST_STAMPS="yyyy-mm-dd"
 SAVEHIST=100000
-plugins=(git z fzf)
+plugins=(git z fzf docker)
 source $ZSH/oh-my-zsh.sh
 
 export TZ=America/New_York
