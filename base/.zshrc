@@ -22,7 +22,7 @@ unsetopt auto_menu
 alias j=z
 alias edges='ssh edges@3e.org'
 alias htop='TERM=screen htop'
-alias vi='vim'  # not sure if needed
+alias vi='vim'
 alias mefi='ssh dev.host tail -20 linkwatcher/today.log'
 alias sci='ssh-copy-id'
 alias irc='ssh -t dev.host weechat'
@@ -30,7 +30,7 @@ alias dh='dirs -v'
 alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
 
-## finally, per-host customizations
+# per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
     alias irc='rm $HOME/.weechat/weechat.log;weechat'
 fi
