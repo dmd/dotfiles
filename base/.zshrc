@@ -48,8 +48,6 @@ fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
 if (( ${micchosts[(I)$SHORT_HOST]} )); then
-    alias q='qstat -u "*"'
     . ~proto/.bashrc.master
-    export PATH=/cm/local/apps/docker/current/bin/:/cm/local/apps/docker-compose/1.17.1/bin/:/cm/shared/anaconda3/bin:${FSLDIR}/bin:/cm/shared/ICA-AROMA:${PATH}
 fi
 
