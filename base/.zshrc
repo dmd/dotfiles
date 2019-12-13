@@ -43,11 +43,26 @@ fi
 
 if [[ $SHORT_HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
-    . /usr/local/miniconda3/etc/profile.d/conda.sh
+# . /usr/local/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
 if (( ${micchosts[(I)$SHORT_HOST]} )); then
     . ~proto/.bashrc.master
-fi
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/cm/shared/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/cm/shared/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/cm/shared/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/cm/shared/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+fi
