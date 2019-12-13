@@ -3,7 +3,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM=$HOME/dotfiles/zshcustom
 ZSH_THEME="dmd"
-plugins=(git z fzf docker)
+plugins=(z fzf docker)
 source $ZSH/oh-my-zsh.sh
 
 HIST_STAMPS="yyyy-mm-dd"
@@ -17,6 +17,7 @@ export TERM=xterm-256color
 export LESS=-r
 
 bindkey -e 
+unsetopt auto_menu
 
 alias j=z
 alias edges='ssh edges@3e.org'
@@ -26,6 +27,8 @@ alias mefi='ssh dev.host tail -20 linkwatcher/today.log'
 alias sci='ssh-copy-id'
 alias irc='ssh -t dev.host weechat'
 alias dh='dirs -v'
+alias gca='git commit -v -a'
+alias gcam='git commit -a -m'
 
 ## finally, per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
