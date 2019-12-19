@@ -53,4 +53,5 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
     eval "$__conda_setup"
     unset __conda_setup
+    alias car='conda activate rapidtide'
 fi
