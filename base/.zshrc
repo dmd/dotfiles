@@ -24,6 +24,7 @@ export LESS=-r
 
 bindkey -e 
 unsetopt auto_menu
+setopt rmstarsilent
 
 alias j=z
 alias edges='ssh edges@3e.org'
@@ -60,4 +61,6 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     eval "$__conda_setup"
     unset __conda_setup
     alias car='conda activate rapidtide'
+    alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
+    alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
 fi
