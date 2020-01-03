@@ -3,7 +3,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM=$HOME/dotfiles/zshcustom
 ZSH_THEME="dmd"
-plugins=(z fzf docker)
+plugins=(z fzf docker history-nodup)
 source $ZSH/oh-my-zsh.sh
 
 # Automatically quote globs in URL and remote references
@@ -13,7 +13,7 @@ zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 HIST_STAMPS="yyyy-mm-dd"
-SAVEHIST=100000
+
 export TZ=America/New_York
 export PATH=~/bin:~/.local/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
 export ANSIBLE_NOCOWS=1
