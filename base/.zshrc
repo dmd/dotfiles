@@ -64,5 +64,6 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias car='conda activate rapidtide'
     alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
+    source $HOME/.config/broot/launcher/bash/br
 fi
 
