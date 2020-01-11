@@ -46,7 +46,6 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
     alias m='ssh micc'
     alias x='ssh x5backup'
-    source $HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br
 fi
 
 if [[ $SHORT_HOST == pico ]]; then
@@ -64,6 +63,5 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias car='conda activate rapidtide'
     alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
-    source $HOME/.config/broot/launcher/bash/br
 fi
 
