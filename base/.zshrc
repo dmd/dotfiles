@@ -3,9 +3,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM=$HOME/dotfiles/zshcustom
 ZSH_THEME="dmd"
-CASE_SENSITIVE="true"
 plugins=(z fzf docker history-nodup pawk)
 source $ZSH/oh-my-zsh.sh
+
+# lower case can mean upper case, but not vice versa
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Automatically quote globs in URL and remote references
 __remote_commands=(scp rsync)
