@@ -39,6 +39,7 @@ alias irc='ssh -t dev.host weechat'
 alias dh='dirs -v'
 alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
+alias dclogs='docker-compose logs -f --tail=10'
 
 # per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
