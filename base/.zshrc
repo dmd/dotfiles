@@ -40,6 +40,7 @@ alias dh='dirs -v'
 alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
 alias dclogs='docker-compose logs -f --tail=10'
+alias s='sudo zsh'
 
 # per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
@@ -67,5 +68,6 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias car='conda activate rapidtide'
     alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
+    alias s='sudo bash'
 fi
 
