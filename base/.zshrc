@@ -39,7 +39,7 @@ alias irc='ssh -t dev.host weechat'
 alias dh='dirs -v'
 alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
-alias dclogs='docker-compose logs -f --tail=10'
+alias dclogs='pushd /home/ddrucker/mictools/miccpipe; docker-compose logs -f --tail=10; popd'
 alias s='sudo zsh'
 
 # per-host customizations
