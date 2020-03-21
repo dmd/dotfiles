@@ -54,6 +54,7 @@ fi
 
 if [[ $SHORT_HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
+    alias tt='tmuxinator tun'
     . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
 
