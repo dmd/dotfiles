@@ -74,6 +74,9 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
     alias s='sudo bash'
+    newfmri() {
+        singularity build fmriprep-${1}.simg docker://poldracklab/fmriprep:${1}
+    }
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
