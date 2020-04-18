@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
+    Plug 'tpope/vim-commentary'            " gc to comment
 call plug#end()
 
 " better % matching
