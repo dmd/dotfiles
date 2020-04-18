@@ -26,7 +26,7 @@ export TERM=xterm-256color
 export LESS=-r
 
 bindkey -e 
-unsetopt auto_menu
+# unsetopt auto_menu
 setopt rmstarsilent
 
 alias j=z
