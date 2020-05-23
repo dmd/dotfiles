@@ -48,15 +48,15 @@ fi
 
 if [[ $SHORT_HOST == ogawa ]]; then
     alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
-    alias m='ssh micc'
-    alias x='ssh x5backup'
+    alias m='ssh micc.mclean.harvard.edu'
+    alias x='ssh x5backup.mclean.harvard.edu'
 fi
 
 if [[ $SHORT_HOST == pico ]]; then
     alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
     alias tt='tmuxinator tun'
-    alias m='ssh micc'
-    alias x='ssh x5backup'
+    alias m='ssh micc.mclean.harvard.edu'
+    alias x='ssh x5backup.mclean.harvard.edu'
     . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
 
