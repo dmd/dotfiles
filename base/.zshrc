@@ -24,6 +24,7 @@ export EDITOR=vim
 export VISUAL=$EDITOR
 export TERM=xterm-256color
 export LESS=-r
+export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 bindkey -e 
 # unsetopt auto_menu
