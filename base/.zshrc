@@ -52,12 +52,10 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias x='ssh x5backup'
 fi
 
-if [[ $SHORT_HOST == pico ]]; then
-    alias books="rsync -rtv dev.host:/var/lib/transmission-daemon/downloads/ ~/Desktop/tmp/books/"
+if [[ $SHORT_HOST == pico || $SHORT_HOST == atto ]]; then
     alias tt='tmuxinator tun'
     alias m='ssh micc'
     alias x='ssh x5backup'
-    . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
