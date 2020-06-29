@@ -53,10 +53,14 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias x='ssh x5backup'
 fi
 
-if [[ $SHORT_HOST == pico || $SHORT_HOST == atto ]]; then
+if [[ $SHORT_HOST == atto ]]; then
     alias tt='tmuxinator tun'
-    alias m='ssh micc'
-    alias x='ssh x5backup'
+    alias m='ttssh ddrucker@micc.mclean.harvard.edu'
+    alias x='ttssh root@x5backup.mclean.harvard.edu'
+    alias o='ttssh ddrucker@ogawa.mclean.harvard.edu'
+    alias ogawa='ttssh ddrucker@ogawa.mclean.harvard.edu'
+    alias pluto='ttssh ddrucker@pluto.mclean.harvard.edu'
+    alias jupiter='ttssh ddrucker@jupiter.mclean.harvard.edu'
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
