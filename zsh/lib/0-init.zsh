@@ -1,5 +1,3 @@
-######### my own omz
-ZSH_CACHE_DIR="$ZSH/cache"
 autoload -U compaudit compinit
 
 # Figure out the SHORT hostname
@@ -13,8 +11,8 @@ fi
 ZSH_COMPDUMP="${HOME}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 # Construct zcompdump OMZ metadata
-zcompdump_revision="#omz revision: $(builtin cd -q "$ZSH"; git rev-parse HEAD 2>/dev/null)"
-zcompdump_fpath="#omz fpath: $fpath"
+zcompdump_revision="#revision: $(builtin cd -q "$ZSH"; git rev-parse HEAD 2>/dev/null)"
+zcompdump_fpath="#fpath: $fpath"
 
 # Delete the zcompdump file if OMZ zcompdump metadata changed
 if ! command grep -q -Fx "$zcompdump_revision" "$ZSH_COMPDUMP" 2>/dev/null \
@@ -23,13 +21,7 @@ if ! command grep -q -Fx "$zcompdump_revision" "$ZSH_COMPDUMP" 2>/dev/null \
   zcompdump_refresh=1
 fi
 
-if [[ $ZSH_DISABLE_COMPFIX != true ]]; then
-    source $ZSH/lib/compfix.zsh
-    handle_completion_insecurities
-    compinit -i -C -d "${ZSH_COMPDUMP}"
-else
-    compinit -u -C -d "${ZSH_COMPDUMP}"
-fi
+compinit -i -C -d "${ZSH_COMPDUMP}"
 
 # Append zcompdump metadata if missing
 if (( $zcompdump_refresh )); then
@@ -43,4 +35,3 @@ EOF
 fi
 
 unset zcompdump_revision zcompdump_fpath zcompdump_refresh
-

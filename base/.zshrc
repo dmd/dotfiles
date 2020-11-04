@@ -1,10 +1,10 @@
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
 HIST_STAMPS="yyyy-mm-dd"
 
-export ZSH=$HOME/dotfiles/zsh
-source $ZSH/omz.zsh
-for lib ($ZSH/lib/*.zsh) source $lib
-for lib ($ZSH/plugins/*.zsh) source $lib
+ZSH_CACHE_DIR="$ZSH/cache"
+export ZSHLIB=$HOME/dotfiles/zsh
+for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
+    source $lib
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -14,7 +14,6 @@ __remote_commands=(scp rsync)
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
-
 
 export TZ=America/New_York
 export PATH=~/bin:~/.local/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
