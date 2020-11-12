@@ -1,4 +1,5 @@
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
+HISTFILE=$HOME/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
 ZSH_CACHE_DIR="$ZSH/cache"
