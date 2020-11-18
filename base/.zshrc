@@ -82,3 +82,7 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 alias sz=it2dl
 alias rz=it2ul
+
+# launch the starship!
+export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
+eval "$(starship init zsh)"
