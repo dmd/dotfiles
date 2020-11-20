@@ -84,5 +84,6 @@ alias sz=it2dl
 alias rz=it2ul
 
 # launch the starship!
+export LC_ALL=en_US.UTF-8  # tmux needs this
 export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
 eval "$(starship init zsh)"
