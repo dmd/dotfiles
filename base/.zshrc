@@ -71,7 +71,7 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     unset __conda_setup
     alias car='conda activate rapidtide'
     alias dclogs='pushd /home/ddrucker/mictools/miccpipe; docker-compose logs --timestamps -f --tail=10; popd'
-    alias dcmodify='singularity run  /cm/shared/singularity/images/dcm.sif dcmodify'
+    alias dcmodify='singularity run  -B /data /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run  /cm/shared/singularity/images/dcm.sif dcmdump'
     alias s='sudo bash'
     newfmri() {
