@@ -57,9 +57,8 @@ if [[ $SHORT_HOST == atto ]]; then
     alias m='ttssh ddrucker@micc.mclean.harvard.edu'
     alias x='ttssh root@x5backup.mclean.harvard.edu'
     alias o='ttssh ddrucker@ogawa.mclean.harvard.edu'
-    alias ogawa='ttssh ddrucker@ogawa.mclean.harvard.edu'
+    alias ogawa=o
     alias pluto='ttssh ddrucker@pluto.mclean.harvard.edu'
-    alias jupiter='ttssh ddrucker@jupiter.mclean.harvard.edu'
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
