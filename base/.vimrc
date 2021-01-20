@@ -51,7 +51,7 @@ set number                             " Line numbering. I used to use relnumber
 set laststatus=2                       " Always show status line
 set matchtime=5                        " Show matching time
 set modeline
-set mouse=a
+" set mouse=a
 set nojoinspaces
 set scrolljump=5                       " Line to scroll when cursor leaves screen
 set scrolloff=3                        " Minumum lines to keep above and below cursor
