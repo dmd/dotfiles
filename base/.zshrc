@@ -47,6 +47,7 @@ if [[ $SHORT_HOST == dev ]]; then
 fi
 
 if [[ $SHORT_HOST == ogawa ]]; then
+    export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
     alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
     alias m='ssh micc'
     alias x='ssh x5backup'
