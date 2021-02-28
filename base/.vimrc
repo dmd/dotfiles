@@ -78,8 +78,6 @@ nnoremap Q <nop>
 " the trailing // makes it use complete path (foo/bar becomes foo%bar)
 set directory=/tmp//
 
-au BufRead,BufNewFile *.ircsearch set filetype=ircsearch
-
 " clear matches, update syntax highlighting in C-l
 nnoremap <c-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
