@@ -51,11 +51,13 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
     alias m='ssh micc'
     alias x='ssh x5backup'
+    alias n='ssh root@nisaba'
 fi
 
 if [[ $SHORT_HOST == atto ]]; then
     alias tt='tmuxinator tun'
     alias m='ttssh ddrucker@micc.mclean.harvard.edu'
+    alias n='ttssh root@nisaba.mclean.harvard.edu'
     alias x='ttssh root@x5backup.mclean.harvard.edu'
     alias o='ttssh ddrucker@ogawa.mclean.harvard.edu'
     alias ogawa=o
