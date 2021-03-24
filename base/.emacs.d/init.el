@@ -1,0 +1,98 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Configure and load use-package
+(setq use-package-always-ensure t)
+(require 'diminish)
+
+(eval-when-compile
+  (defvar use-package-verbose t)
+  (require 'use-package))
+
+(load-theme 'tango-dark)
+(add-to-list 'default-frame-alist '(background-color . "black"))
+
+
+(column-number-mode 1)
+(line-number-mode 1)
+(use-package smart-mode-line
+  :config
+  (setq sml/no-confirm-load-theme t
+        sml/theme 'dark)
+  (sml/setup))
+
+(custom-set-variables
+ '(package-selected-packages
+   '(diff-hl which-key smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish)))
+(custom-set-faces)
+
+(setq vc-follow-symlinks t)
+
+(use-package ido
+  :config
+  ;; smex is a better replacement for M-x
+  (use-package smex
+    :bind
+    ("M-x" . smex)
+    ("M-X" . smex-major-mode-commands))
+
+
+  ;; This makes ido work vertically
+  (use-package ido-vertical-mode
+    :config
+    (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right
+          ido-vertical-show-count t)
+    (ido-vertical-mode 1))
+
+  ;; This adds flex matching to ido
+  (use-package flx-ido
+    :config
+    (flx-ido-mode 1)
+    (setq ido-enable-flex-matching t
+          flx-ido-threshold 1000))
+
+  ;; Turn on ido everywhere we can
+  (ido-mode 1)
+  (ido-everywhere 1)
+
+  (setq resize-mini-windows t
+        ido-use-virtual-buffers t
+        ido-auto-merge-work-directories-length -1))
+
+(use-package smooth-scrolling
+  :config
+  (setq smooth-scroll-margin 5
+        scroll-conservatively 101
+        scroll-preserve-screen-position t
+        auto-window-vscroll nil
+        scroll-margin 5)
+  (smooth-scrolling-mode 1))
+
+
+(use-package which-key
+  :diminish which-key-mode
+  :config
+  (which-key-mode 1)
+  (setq which-key-idle-delay 0.5
+        which-key-popup-type 'side-window
+        which-key-side-window-location 'right))
+(which-key-setup-side-window-right-bottom)
+
+;; Ensure backups make it to a different folder so we don't litter all
+;; our directories with them.
+(setq save-place-file (concat user-emacs-directory "places")
+      backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
+
+;; Make it so you only need to type 'y' or 'n' not 'yes' or 'no'
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Support the mouse and colors in the terminal
+(xterm-mouse-mode 1)
+
+(set-background-color "black")
