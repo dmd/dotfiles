@@ -5,15 +5,14 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
-(use-package benchmark-init
-  :ensure t
-  :config
-  ;; To disable collection of benchmark data after init is done.
-  (add-hook 'after-init-hook 'benchmark-init/deactivate))
-
-;; Configure and load use-package
 (setq use-package-always-ensure t)
+
+;; (use-package benchmark-init
+;;   :ensure t
+;;   :config
+;;   ;; To disable collection of benchmark data after init is done.
+;;   (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
 (use-package diminish)
 
 (eval-when-compile
@@ -22,7 +21,6 @@
 
 (load-theme 'tango-dark)
 (add-to-list 'default-frame-alist '(background-color . "black"))
-
 
 (column-number-mode 1)
 (line-number-mode 1)
@@ -33,18 +31,16 @@
   (sml/setup))
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(diff-hl which-key smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+   '(diff-hl smooth-scrolling
+	     flx-ido
+	     ido-vertical-mode
+	     smex
+	     smart-mode-line
+	     use-package
+	     diminish
+	     expand-region
+	     )))
 
 (setq vc-follow-symlinks t)
 
@@ -88,19 +84,9 @@
         scroll-margin 5)
   (smooth-scrolling-mode 1))
 
-
 (use-package expand-region
   :bind ("C-\\" . er/expand-region))
 
-
-(use-package which-key
-  :diminish which-key-mode
-  :config
-  (which-key-mode 1)
-  (setq which-key-idle-delay 0.5
-        which-key-popup-type 'side-window
-        which-key-side-window-location 'right))
-(which-key-setup-side-window-right-bottom)
 
 ;; Ensure backups make it to a different folder so we don't litter all
 ;; our directories with them.
