@@ -14,7 +14,7 @@
 
 ;; Configure and load use-package
 (setq use-package-always-ensure t)
-(require 'diminish)
+(use-package diminish)
 
 (eval-when-compile
   (defvar use-package-verbose t)
