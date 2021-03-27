@@ -29,7 +29,7 @@ bindkey -e
 # unsetopt auto_menu
 setopt rmstarsilent
 
-alias e=emacs
+alias e="emacs -nw"
 alias j=z
 alias edges='ssh edges@3e.org'
 alias htop='TERM=screen htop'
