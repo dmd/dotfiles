@@ -24,23 +24,21 @@
 
 (column-number-mode 1)
 (line-number-mode 1)
+
+
 (use-package smart-mode-line
   :config
   (setq sml/no-confirm-load-theme t
-        sml/theme 'dark)
+        sml/theme 'light)
   (sml/setup))
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(diff-hl smooth-scrolling
-	     flx-ido
-	     ido-vertical-mode
-	     smex
-	     smart-mode-line
-	     use-package
-	     diminish
-	     expand-region
-	     )))
+   '(diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
 
 (setq vc-follow-symlinks t)
 
@@ -101,3 +99,9 @@
 (xterm-mouse-mode 1)
 
 (set-background-color "black")
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
