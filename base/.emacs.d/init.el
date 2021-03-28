@@ -91,6 +91,8 @@
 (setq save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;; Make it so you only need to type 'y' or 'n' not 'yes' or 'no'
 (fset 'yes-or-no-p 'y-or-n-p)
