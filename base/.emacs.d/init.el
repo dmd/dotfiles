@@ -38,7 +38,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
+   '(neotree diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
 
 (setq vc-follow-symlinks t)
 
