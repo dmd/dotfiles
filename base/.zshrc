@@ -24,6 +24,7 @@ export VISUAL=$EDITOR
 export TERM=xterm-256color
 export LESS=-r
 export HOMEBREW_AUTO_UPDATE_SECS=86400
+export FZF_DEFAULT_OPTS='--reverse --border --exact --height=50%'
 
 bindkey -e 
 # unsetopt auto_menu
