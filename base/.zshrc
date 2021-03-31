@@ -19,7 +19,7 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 export TZ=America/New_York
 export PATH=~/bin:~/.local/bin:~/emacslib/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
 export ANSIBLE_NOCOWS=1
-export EDITOR=vim
+export EDITOR="emacs -nw"
 export VISUAL=$EDITOR
 export TERM=xterm-256color
 export LESS=-r
