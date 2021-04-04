@@ -44,9 +44,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(neotree diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
+   '(smart-tab neotree diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
 
 (setq vc-follow-symlinks t)
+
+(use-package smart-tab
+  :config
+  (global-smart-tab-mode))
 
 (use-package ido
   :config
@@ -114,4 +118,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-(global-set-key "\M- " 'hippie-expand)
+
