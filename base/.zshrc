@@ -21,7 +21,6 @@ export PATH=~/bin:~/.local/bin:~/emacslib/bin:/usr/local/bin:/sbin:/usr/local/sb
 export ANSIBLE_NOCOWS=1
 export EDITOR=emacs
 export VISUAL=$EDITOR
-export TERM=xterm-256color
 export LESS=-r
 export HOMEBREW_AUTO_UPDATE_SECS=86400
 export FZF_DEFAULT_OPTS='--reverse --border --exact --height=50%'
@@ -87,11 +86,14 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     }
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-alias sz=it2dl
-alias rz=it2ul
-
-# launch the starship!
-export LC_ALL=en_US.UTF-8  # tmux needs this
-export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
-eval "$(starship init zsh)"
+if [[ "$TERM" != dumb ]]; then
+    export TERM=xterm-256color
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    alias sz=it2dl
+    alias rz=it2ul
+    export LC_ALL=en_US.UTF-8  # tmux needs this
+    export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
+    eval "$(starship init zsh)"
+else
+    export PS1=$
+fi
