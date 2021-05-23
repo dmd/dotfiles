@@ -17,7 +17,7 @@ zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 export TZ=America/New_York
-export PATH=~/bin:~/.local/bin:~/emacslib/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
+export PATH=~/bin:~/.local/bin:~/emacslib/bin:/opt/homebrew/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
 export ANSIBLE_NOCOWS=1
 export EDITOR=emacs
 export VISUAL=$EDITOR
@@ -57,7 +57,7 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias n='ssh root@nisaba'
 fi
 
-if [[ $SHORT_HOST == atto ]]; then
+if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary ]]; then
     alias tt='tmuxinator tun'
     alias m='ttssh ddrucker@micc.mclean.harvard.edu'
     alias n='ttssh root@nisaba.mclean.harvard.edu'
