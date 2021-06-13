@@ -3,6 +3,7 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 (setq initial-major-mode 'fundamental-mode)
+(menu-bar-mode 0)
 
 (require 'package)
 (add-to-list 'package-archives
