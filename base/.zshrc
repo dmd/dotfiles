@@ -8,9 +8,10 @@ for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
     source $lib
 
 fpath=($ZSHLIB/completions $fpath)
-autoload -Uz compinit
-compinit -u
-    
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
+
+
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -58,6 +59,7 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias m='ssh micc'
     alias x='ssh x5backup'
     alias n='ssh root@nisaba'
+    complete -C '/usr/local/bin/aws_completer' aws
 fi
 
 if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary ]]; then

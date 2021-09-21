@@ -13,3 +13,6 @@ show_always = true
 
 [status]
 disabled = false
+
+[aws]
+disabled = true
