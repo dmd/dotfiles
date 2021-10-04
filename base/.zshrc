@@ -81,10 +81,10 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     unset __conda_setup
     alias car='conda activate rapidtide'
     alias dclogs='pushd /home/ddrucker/mictools/miccpipe; docker-compose logs --timestamps -f --tail=10; popd'
-    alias dcmodify='singularity run  -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmodify'
-    alias dcmdump='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmdump'
-    alias storescu='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif storescu'
-    alias dcmsend='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmsend'
+#    alias dcmodify='singularity run  -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmodify'
+#    alias dcmdump='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmdump'
+#    alias storescu='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif storescu'
+#    alias dcmsend='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmsend'
     alias s='sudo bash'
     newfmri() {
         singularity build fmriprep-${1}.simg docker://poldracklab/fmriprep:${1}
