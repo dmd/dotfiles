@@ -8,9 +8,6 @@ for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
     source $lib
 
 fpath=($ZSHLIB/completions $fpath)
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
-
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
