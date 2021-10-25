@@ -1,18 +1,21 @@
 [directory]
 truncation_length = 6
-truncation_symbol = "…/"
+truncation_symbol = '…/'
 truncate_to_repo = true
 
 [hostname]
 ssh_only = false
-format = "@[$hostname](bold blue) "
+format = '@[$hostname](bold blue) '
 
 [username]
-format = "[$user]($style)"
+format = '[$user]($style)'
 show_always = true
 
 [status]
 disabled = false
 
 [aws]
+disabled = true
+
+[battery]
 disabled = true
