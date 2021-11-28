@@ -47,7 +47,7 @@ set hlsearch                           " Highlight search terms
 set ignorecase                         " Case insensitive search
 set smartcase                          " ... but case sensitive when uc present
 set incsearch                          " Find as you type search
-set number                             " Line numbering. I used to use relnumber but meh.
+set nonumber                           " Line numbering. I used to use relnumber but meh.
 set laststatus=2                       " Always show status line
 set matchtime=5                        " Show matching time
 set modeline
