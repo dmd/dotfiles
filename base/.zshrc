@@ -44,6 +44,7 @@ alias gca='git commit -v -a'
 alias gcam='git commit -a -m'
 alias s='sudo zsh'
 alias ta='tmux attach'
+alias rm='rm -i --one-file-system'
 
 # per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
