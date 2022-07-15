@@ -66,12 +66,12 @@ fi
 
 if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary ]]; then
     alias tt='tmuxinator tun'
-    alias m='ttssh ddrucker@micc.mclean.harvard.edu'
-    alias n='ttssh root@nisaba.mclean.harvard.edu'
-    alias x='ttssh root@x5backup.mclean.harvard.edu'
-    alias o='ttssh ddrucker@ogawa.mclean.harvard.edu'
+    alias m='ssh ddrucker@micc.mclean.harvard.edu'
+    alias n='ssh root@nisaba.mclean.harvard.edu'
+    alias x='ssh root@x5backup.mclean.harvard.edu'
+    alias o='ssh ddrucker@ogawa.mclean.harvard.edu'
     alias ogawa=o
-    alias pluto='ttssh ddrucker@pluto.mclean.harvard.edu'
+    alias pluto='ssh ddrucker@pluto.mclean.harvard.edu'
 fi
 
 micchosts=(micc node1 node2 node3 node4 node5)
