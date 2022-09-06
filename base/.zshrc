@@ -88,9 +88,6 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias storescu='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif storescu'
     alias dcmsend='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmsend'
     alias s='sudo bash'
-    newfmri() {
-        singularity build fmriprep-${1}.simg docker://poldracklab/fmriprep:${1}
-    }
 fi
 
 if [[ "$TERM" != dumb ]]; then
