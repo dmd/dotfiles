@@ -61,7 +61,6 @@ if [[ $SHORT_HOST == ogawa ]]; then
     alias x='ssh x5backup'
     alias n='ssh root@nisaba'
     complete -C '/usr/local/bin/aws_completer' aws
-    . /Users/ddrucker/google-cloud-sdk/path.zsh.inc
 fi
 
 if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary ]]; then
