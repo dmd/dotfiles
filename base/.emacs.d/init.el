@@ -4,6 +4,7 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 (setq initial-major-mode 'fundamental-mode)
+(setq-default indent-tabs-mode nil)
 (menu-bar-mode 0)
 
 (require 'package)
