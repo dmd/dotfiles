@@ -64,7 +64,7 @@ if [[ $SHORT_HOST == ogawa ]]; then
     complete -C '/usr/local/bin/aws_completer' aws
 fi
 
-if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary ]]; then
+if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary || $SHORT_HOST == ddrucker-mba ]]; then
     alias tt='tmuxinator tun'
     alias m='ssh ddrucker@micc.mclean.harvard.edu'
     alias n='ssh root@nisaba.mclean.harvard.edu'
