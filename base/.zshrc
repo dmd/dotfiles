@@ -20,7 +20,6 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 
 export TZ=America/New_York
 export PATH=~/bin:~/.cargo/bin:~/.local/bin:~/emacslib/bin:/opt/homebrew/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
-export ANSIBLE_NOCOWS=1
 export EDITOR=emacs
 export VISUAL=$EDITOR
 export LESS=-r
@@ -29,7 +28,6 @@ export FZF_DEFAULT_OPTS='--reverse --border --exact --height=50%'
 export AWS_PAGER=""
 
 bindkey -e 
-# unsetopt auto_menu
 setopt rmstarsilent
 setopt HIST_IGNORE_SPACE
 
@@ -40,15 +38,8 @@ alias htop='TERM=screen htop'
 alias vi='vim'
 alias mefi='ssh dev.host tail -20 linkwatcher/today.log'
 alias sci='ssh-copy-id'
-alias dh='dirs -v'
-alias gca='git commit -v -a'
-alias gcam='git commit -a -m'
 alias s='sudo zsh'
 alias ta='tmux attach'
-
-if [[ "$(uname)" != "Darwin" ]]; then
-    alias rm='rm -i --one-file-system'
-fi
 
 # per-host customizations
 if [[ $SHORT_HOST == dev ]]; then
@@ -57,7 +48,6 @@ fi
 
 if [[ $SHORT_HOST == ogawa ]]; then
     export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-    alias tun='ssh -D 7890 -f -C -q -N dmd@dev.host'
     alias m='ssh micc'
     alias x='ssh x5backup'
     alias n='ssh root@nisaba'
@@ -65,7 +55,6 @@ if [[ $SHORT_HOST == ogawa ]]; then
 fi
 
 if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary || $SHORT_HOST == ddrucker-mba ]]; then
-    alias tt='tmuxinator tun'
     alias m='ssh ddrucker@micc.mclean.harvard.edu'
     alias n='ssh root@nisaba.mclean.harvard.edu'
     alias x='ssh root@x5backup.mclean.harvard.edu'
@@ -81,8 +70,6 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
     eval "$__conda_setup"
     unset __conda_setup
-    alias car='conda activate rapidtide'
-    alias dclogs='pushd /home/ddrucker/mictools/miccpipe; docker-compose logs --timestamps -f --tail=10; popd'
     alias dcmodify='singularity run  -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmodify'
     alias dcmdump='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmdump'
     alias storescu='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif storescu'
@@ -92,10 +79,8 @@ fi
 
 if [[ "$TERM" != dumb ]]; then
     export TERM=xterm-256color
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-    alias sz=it2dl
-    alias rz=it2ul
     export LC_ALL=en_US.UTF-8  # tmux needs this
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
     export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
     eval "$(starship init zsh)"
 else
