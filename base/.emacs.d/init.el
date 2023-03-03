@@ -42,12 +42,8 @@
   (sml/setup))
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(smart-tab neotree diff-hl smooth-scrolling flx-ido ido-vertical-mode smex smart-mode-line use-package diminish expand-region)))
+   '(smart-tab flx-ido ido-vertical-mode smex smart-mode-line use-package diminish )))
 
 (setq vc-follow-symlinks t)
 
@@ -85,18 +81,6 @@
   (setq resize-mini-windows t
         ido-use-virtual-buffers t
         ido-auto-merge-work-directories-length -1))
-
-(use-package smooth-scrolling
-  :config
-  (setq smooth-scroll-margin 5
-        scroll-conservatively 101
-        scroll-preserve-screen-position t
-        auto-window-vscroll nil
-        scroll-margin 5)
-  (smooth-scrolling-mode 1))
-
-(use-package expand-region
-  :bind ("C-\\" . er/expand-region))
 
 
 ;; Ensure backups make it to a different folder so we don't litter all
