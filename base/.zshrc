@@ -50,7 +50,7 @@ if [[ $SHORT_HOST == ogawa ]]; then
     export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
     alias m='ssh micc'
     alias x='ssh x5backup'
-    alias n='ssh root@nisaba'
+    alias n='ssh nisaba'
     complete -C '/usr/local/bin/aws_completer' aws
 fi
 
