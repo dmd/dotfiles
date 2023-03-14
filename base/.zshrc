@@ -42,26 +42,32 @@ alias s='sudo zsh'
 alias ta='tmux attach'
 
 # per-host customizations
-if [[ $SHORT_HOST == dev ]]; then
-    alias irc='rm $HOME/.weechat/weechat.log;weechat'
-fi
+case $SHORT_HOST in
+    dev)
+        alias irc='rm $HOME/.weechat/weechat.log;weechat'
+        ;;
 
-if [[ $SHORT_HOST == ogawa ]]; then
-    export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-    alias m='ssh micc'
-    alias x='ssh x5backup'
-    alias n='ssh nisaba'
-    complete -C '/usr/local/bin/aws_completer' aws
-fi
+    ogawa)
+        export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+        alias m='ssh micc'
+        alias x='ssh x5backup'
+        alias n='ssh nisaba'
+        complete -C '/usr/local/bin/aws_completer' aws
+        ;;
 
-if [[ $SHORT_HOST == atto || $SHORT_HOST == dromedary || $SHORT_HOST == ddrucker-mba ]]; then
-    alias m='ssh ddrucker@micc.mclean.harvard.edu'
-    alias n='ssh root@nisaba.mclean.harvard.edu'
-    alias x='ssh root@x5backup.mclean.harvard.edu'
-    alias o='ssh ddrucker@ogawa.mclean.harvard.edu'
-    alias ogawa=o
-    alias pluto='ssh ddrucker@pluto.mclean.harvard.edu'
-fi
+    atto|dromedary|ddrucker-mba)
+        alias m='ssh ddrucker@micc.mclean.harvard.edu'
+        alias n='ssh root@nisaba.mclean.harvard.edu'
+        alias x='ssh root@x5backup.mclean.harvard.edu'
+        alias o='ssh ddrucker@ogawa.mclean.harvard.edu'
+        alias ogawa=o
+        alias pluto='ssh ddrucker@pluto.mclean.harvard.edu'
+        ;;
+esac
+
+function singularity_run() {
+    singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
+}
 
 micchosts=(micc node1 node2 node3 node4 node5)
 if (( ${micchosts[(I)$SHORT_HOST]} )); then
@@ -70,10 +76,10 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
     eval "$__conda_setup"
     unset __conda_setup
-    alias dcmodify='singularity run  -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmodify'
-    alias dcmdump='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmdump'
-    alias storescu='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif storescu'
-    alias dcmsend='singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif dcmsend'
+    alias dcmodify='singularity_run dcmodify'
+    alias dcmdump='singularity_run dcmdump'
+    alias storescu='singularity_run storescu'
+    alias dcmsend='singularity_run dcmsend'
     alias s='sudo bash'
 fi
 
