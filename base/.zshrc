@@ -53,7 +53,7 @@ case $SHORT_HOST in
         alias x='ssh x5backup'
         alias n='ssh nisaba'
         complete -C '/usr/local/bin/aws_completer' aws
-        export LC_ALL=en_US.UTF-7  # tmux needs this
+#        export LC_ALL=en_US.UTF-7  # tmux needs this
         ;;
 
     atto|dromedary|ddrucker-mba)
