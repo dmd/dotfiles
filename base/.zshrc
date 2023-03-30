@@ -53,6 +53,7 @@ case $SHORT_HOST in
         alias x='ssh x5backup'
         alias n='ssh nisaba'
         complete -C '/usr/local/bin/aws_completer' aws
+        export LC_ALL=en_US.UTF-7  # tmux needs this
         ;;
 
     atto|dromedary|ddrucker-mba)
@@ -69,7 +70,7 @@ function singularity_run() {
     singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
 }
 
-micchosts=(micc node1 node2 node3 node4 node5)
+micchosts=(micc node1 node2 node3 node4 node5) #  mickey mickey-node1 mickey-node2)
 if (( ${micchosts[(I)$SHORT_HOST]} )); then
     . ~proto/.bashrc.master
 
@@ -83,12 +84,7 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias s='sudo bash'
 fi
 
-if [[ "$TERM" != dumb ]]; then
-    export TERM=xterm-256color
-    export LC_ALL=en_US.UTF-8  # tmux needs this
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-    export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
-    eval "$(starship init zsh)"
-else
-    export PS1=$
-fi
+export TERM=xterm-256color
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
+eval "$(starship init zsh)"
