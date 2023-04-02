@@ -19,7 +19,7 @@ zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
 export TZ=America/New_York
-export PATH=~/bin:~/.cargo/bin:~/.local/bin:~/emacslib/bin:/opt/homebrew/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
+export PATH=~/bin:~/.cargo/bin:~/.local/bin:/opt/homebrew/bin:/usr/local/bin:/sbin:/usr/local/sbin:$PATH
 export EDITOR=emacs
 export VISUAL=$EDITOR
 export LESS=-r
@@ -70,7 +70,7 @@ function singularity_run() {
     singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
 }
 
-micchosts=(micc node1 node2 node3 node4 node5) #  mickey mickey-node1 mickey-node2)
+micchosts=(micc node1 node2 node3 node4 node5)
 if (( ${micchosts[(I)$SHORT_HOST]} )); then
     . ~proto/.bashrc.master
 
@@ -81,6 +81,13 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     alias dcmdump='singularity_run dcmdump'
     alias storescu='singularity_run storescu'
     alias dcmsend='singularity_run dcmsend'
+    alias s='sudo bash'
+    PATH=~/myemacs/bin:$PATH
+fi
+
+mickeyhosts=(mickey mickey-node1 mickey-node2)
+if (( ${micchosts[(I)$SHORT_HOST]} )); then
+    . ~proto/.bashrc.master
     alias s='sudo bash'
 fi
 
