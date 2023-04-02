@@ -10,10 +10,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ervandew/supertab'               " tab completion of words
     Plug 'airblade/vim-gitgutter'          " git changes in gutter
-    Plug 'fidian/hexmode'                  " :Hexmode
     Plug 'dmd/vim-rsi'                     " readline style insertion, C-a C-e etc.
     Plug 'ConradIrwin/vim-bracketed-paste' " automatically set paste
-    Plug 'tpope/vim-commentary'            " gc to comment
 call plug#end()
 
 " better % matching
