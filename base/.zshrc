@@ -51,8 +51,8 @@ case $SHORT_HOST in
     ogawa)
         export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
         alias m='ssh micc'
-        alias x='ssh x5backup'
-        alias n='ssh nisaba'
+        alias x='ssh root@x5backup'
+        alias n='ssh root@nisaba'
         complete -C '/usr/local/bin/aws_completer' aws
 #        export LC_ALL=en_US.UTF-7  # tmux needs this
         ;;
@@ -62,7 +62,6 @@ case $SHORT_HOST in
         alias n='ssh root@nisaba.mclean.harvard.edu'
         alias x='ssh root@x5backup.mclean.harvard.edu'
         alias o='ssh ddrucker@ogawa.mclean.harvard.edu'
-        alias ogawa=o
         alias pluto='ssh ddrucker@pluto.mclean.harvard.edu'
         ;;
 esac
