@@ -2,12 +2,12 @@
 HISTFILE=$HOME/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 
-ZSH_CACHE_DIR="$ZSH/cache"
 export ZSHLIB=$HOME/dotfiles/zsh
 for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
     source $lib
 
-fpath=($ZSHLIB/completions $fpath)
+autoload -U compaudit compinit
+compinit -i -C
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -29,8 +29,8 @@ export AWS_PAGER=""
 
 bindkey -e 
 setopt rmstarsilent
-setopt HIST_IGNORE_SPACE
 
+alias -g ...='../..'
 alias e="emacs -nw"
 alias j=z
 alias edges='ssh edges@3e.org'
@@ -41,6 +41,7 @@ alias sci='ssh-copy-id'
 alias s='sudo zsh'
 alias ta='tmux attach'
 
+SHORT_HOST=${HOST/.*/}
 # per-host customizations
 case $SHORT_HOST in
     dev)
