@@ -7,7 +7,7 @@ for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
     source $lib
 
 autoload -U compaudit compinit
-compinit -i -C
+compinit -i -C -D
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
