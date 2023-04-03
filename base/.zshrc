@@ -70,8 +70,7 @@ function singularity_run() {
     singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
 }
 
-micchosts=(micc node1 node2 node3 node4 node5)
-if (( ${micchosts[(I)$SHORT_HOST]} )); then
+if [ -f /cm/shared/.cluster-name-micc ]; then
     . ~proto/.bashrc.master
 
     __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
@@ -85,8 +84,7 @@ if (( ${micchosts[(I)$SHORT_HOST]} )); then
     PATH=~/myemacs/bin:$PATH
 fi
 
-mickeyhosts=(mickey mickey-node1 mickey-node2)
-if (( ${micchosts[(I)$SHORT_HOST]} )); then
+if [ -f /cm/shared/.cluster-name-mickey ]; then
     . ~proto/.bashrc.master
     alias s='sudo bash'
 fi
