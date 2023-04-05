@@ -1,9 +1,7 @@
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
 HISTFILE=$HOME/.zsh_history
-HIST_STAMPS="yyyy-mm-dd"
 
-export ZSHLIB=$HOME/dotfiles/zsh
-for lib ($ZSHLIB/lib/*.zsh $ZSHLIB/plugins/*.zsh)
+for lib ($HOME?dotfiles/zsh/*.zsh)
     source $lib
 
 autoload -U compaudit compinit
@@ -30,12 +28,11 @@ export AWS_PAGER=""
 bindkey -e 
 setopt rmstarsilent
 
-alias -g ...='../..'
+alias -g ...='cd ../..'
 alias e="emacs -nw"
 alias j=z
 alias edges='ssh edges@3e.org'
 alias htop='TERM=screen htop'
-alias vi='vim'
 alias mefi='ssh dev.host tail -20 linkwatcher/today.log'
 alias sci='ssh-copy-id'
 alias s='sudo zsh'
