@@ -1,7 +1,7 @@
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
 HISTFILE=$HOME/.zsh_history
 
-for lib ($HOME?dotfiles/zsh/*.zsh)
+for lib ($HOME/dotfiles/zsh/*.zsh)
     source $lib
 
 autoload -U compaudit compinit
