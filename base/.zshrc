@@ -1,14 +1,79 @@
+####
+#### completion
+####
+
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
-HISTFILE=$HOME/.zsh_history
 
-for lib ($HOME/dotfiles/zsh/*.zsh)
-    source $lib
+zmodload -i zsh/complist
+WORDCHARS=''
 
+unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on successive tab press
+setopt complete_in_word
+setopt always_to_end
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors ''
+zstyle '*' single-ignored show
+
+autoload -U +X bashcompinit && bashcompinit
 autoload -U compaudit compinit
 compinit -i -C -D
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+####
+#### history
+####
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
+####
+#### color (supports linux and macos)
+####
+
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+if [[ "$OSTYPE" == (darwin|freebsd)* ]]; then
+  ls -G . &>/dev/null && alias ls='ls -G'
+  [[ -n "$LS_COLORS" || -f "$HOME/.dircolors" ]] && gls --color -d . &>/dev/null && alias ls='gls --color=tty'
+else
+  if [[ -z "$LS_COLORS" ]]; then
+    (( $+commands[dircolors] )) && eval "$(dircolors -b)"
+  fi
+
+  ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
+
+  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+fi
+
+if command diff --color . . &>/dev/null; then
+  alias diff='diff --color'
+fi
+
+source $HOME/dotfiles/zsh/fzf.zsh    # fuzzy finder
+source $HOME/dotfiles/zsh/z.zsh      # 31d1's z navigator
 
 # Automatically quote globs in URL and remote references
 __remote_commands=(scp rsync)
