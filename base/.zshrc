@@ -1,3 +1,6 @@
+bindkey -e 
+setopt rmstarsilent
+
 ####
 #### completion
 ####
@@ -25,6 +28,7 @@ compinit -i -C -D
 
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 
 ####
 #### history
@@ -90,8 +94,6 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400
 export FZF_DEFAULT_OPTS='--reverse --border --exact --height=50%'
 export AWS_PAGER=""
 
-bindkey -e 
-setopt rmstarsilent
 
 alias -g ...='cd ../..'
 alias e="emacs -nw"
