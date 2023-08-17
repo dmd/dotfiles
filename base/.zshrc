@@ -1,9 +1,7 @@
 bindkey -e 
-setopt rmstarsilent
+setopt rmstarsilent      # Do not query the user before executing rm *
 
-####
-#### completion
-####
+#### completion ####
 
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
 
@@ -29,14 +27,11 @@ compinit -i -C -D
 # lower case can mean upper case, but not vice versa
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-
-####
-#### history
-####
+#### history ####
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
-SAVEHIST=10000000
+SAVEHIST=$HISTSIZE
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -52,9 +47,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-####
-#### color (supports linux and macos)
-####
+#### color ####
 
 autoload -U colors && colors
 
@@ -86,7 +79,6 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400
 export FZF_DEFAULT_OPTS='--reverse --border --exact --height=50%'
 export AWS_PAGER=""
 
-
 alias -g ...='cd ../..'
 alias e="emacs -nw"
 alias j=z
@@ -97,8 +89,9 @@ alias sci='ssh-copy-id'
 alias s='sudo zsh'
 alias ta='tmux attach'
 
-SHORT_HOST=${HOST/.*/}
 # per-host customizations
+SHORT_HOST=${HOST/.*/}
+
 case $SHORT_HOST in
     dev)
         alias irc='rm $HOME/.weechat/weechat.log;weechat'
@@ -113,27 +106,24 @@ case $SHORT_HOST in
         ;;
 esac
 
-function dcm_run() {
-    singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
-}
-
-if [ -f /cm/shared/.cluster-name-micc ]; then
+# either cluster
+if [ -d /cm/shared ]; then
+    function dcm_run() {
+        singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
+    }
     . ~proto/.bashrc.master
-
-    __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
-    eval "$__conda_setup"
-    unset __conda_setup
+    alias s='sudo bash'
     alias dcmodify='dcm_run dcmodify'
     alias dcmdump='dcm_run dcmdump'
     alias storescu='dcm_run storescu'
     alias dcmsend='dcm_run dcmsend'
-    alias s='sudo bash'
-    PATH=~/myemacs/bin:$PATH
 fi
 
-if [ -f /cm/shared/.cluster-name-mickey ]; then
-    . ~proto/.bashrc.master
-    alias s='sudo bash'
+if [ -f /cm/shared/.cluster-name-micc ]; then
+    __conda_setup="$(/cm/shared/anaconda3/bin/conda shell.zsh hook 2> /dev/null)"
+    eval "$__conda_setup"
+    unset __conda_setup
+    PATH=~/myemacs/bin:$PATH
 fi
 
 export TERM=xterm-256color
