@@ -97,7 +97,7 @@ case $SHORT_HOST in
         alias irc='rm $HOME/.weechat/weechat.log;weechat'
         ;;
 
-    atto|dromedary|ddrucker-mba|ogawa)
+    atto|zepto|dromedary|ddrucker-mba|ogawa)
         alias m='ssh ddrucker@micc.mclean.harvard.edu'
         alias n='ssh root@nisaba.mclean.harvard.edu'
         alias x='ssh root@x5backup.mclean.harvard.edu'
