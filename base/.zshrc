@@ -110,7 +110,7 @@ esac
 # either cluster
 if [ -d /cm/shared ]; then
     function dcm_run() {
-        singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$1"
+        singularity run -B /data -B /home -B /n /cm/shared/singularity/images/dcm.sif "$@"
     }
     . ~proto/.bashrc.master
     alias s='sudo bash'
