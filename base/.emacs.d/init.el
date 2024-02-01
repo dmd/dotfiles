@@ -1,110 +1,75 @@
-(cua-mode)
 (let ((gc-cons-threshold most-positive-fixnum))
-(setq-default inhibit-startup-screen t)
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-(setq initial-scratch-message "")
-(setq initial-major-mode 'fundamental-mode)
-(setq-default indent-tabs-mode nil)
-(menu-bar-mode 0)
+  (add-hook 'after-init-hook
+            (lambda () (setq gc-cons-threshold 1600000)))
+  (cua-mode)
+  (setq initial-major-mode 'fundamental-mode)
+  (setq-default inhibit-startup-screen t)
+  (setq inhibit-splash-screen t)
+  (setq inhibit-startup-message t)
+  (setq initial-scratch-message "")
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(setq use-package-always-ensure t)
+  (setq-default indent-tabs-mode nil)
+  (setq vc-follow-symlinks t)
+  (fset 'yes-or-no-p 'y-or-n-p)
 
-;; (use-package benchmark-init
-;;   :ensure t
-;;   :config
-;;   ;; To disable collection of benchmark data after init is done.
-;;   (add-hook 'after-init-hook 'benchmark-init/deactivate))
+  ;; don't litter
+  (setq save-place-file (concat user-emacs-directory "places")
+        backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups"))))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
 
-(use-package diminish)
+  ;; Support the mouse and colors in the terminal
+  (xterm-mouse-mode 1)
 
-(eval-when-compile
-  (defvar use-package-verbose t)
-  (require 'use-package))
+  ;; (menu-bar-mode 0)
 
-(load-theme 'tango-dark)
-(add-to-list 'default-frame-alist '(background-color . "black"))
+  (require 'package)
+  (add-to-list 'package-archives
+               '("melpa" . "https://melpa.org/packages/"))
+  (package-initialize)
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+  (setq use-package-always-ensure t)
 
-(column-number-mode 1)
-(line-number-mode 1)
+  (require 'use-package)
 
+  (load-theme 'tango-dark)
+  (add-to-list 'default-frame-alist '(background-color . "black"))
 
-(use-package smart-mode-line
-  :config
-  (setq sml/no-confirm-load-theme t
-        sml/theme 'light)
-  (sml/setup))
-
-(custom-set-variables
- '(package-selected-packages
-   '(smart-tab flx-ido ido-vertical-mode smex smart-mode-line use-package diminish )))
-
-(setq vc-follow-symlinks t)
-
-(use-package smart-tab
-  :config
-  (global-smart-tab-mode))
-
-(use-package ido
-  :config
-  ;; smex is a better replacement for M-x
-  (use-package smex
-    :bind
-    ("M-x" . smex)
-    ("M-X" . smex-major-mode-commands))
-
-
-  ;; This makes ido work vertically
-  (use-package ido-vertical-mode
+  (use-package smart-tab
     :config
-    (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right
-          ido-vertical-show-count t)
-    (ido-vertical-mode 1))
+    (global-smart-tab-mode))
 
-  ;; This adds flex matching to ido
-  (use-package flx-ido
+  (use-package ido
     :config
-    (flx-ido-mode 1)
-    (setq ido-enable-flex-matching t
-          flx-ido-threshold 1000))
+    ;; smex is a better replacement for M-x
+    (use-package smex
+      :bind
+      ("M-x" . smex)
+      ("M-X" . smex-major-mode-commands))
 
-  ;; Turn on ido everywhere we can
-  (ido-mode 1)
-  (ido-everywhere 1)
+    ;; This makes ido work vertically
+    (use-package ido-vertical-mode
+      :config
+      (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right
+            ido-vertical-show-count t)
+      (ido-vertical-mode 1))
 
-  (setq resize-mini-windows t
-        ido-use-virtual-buffers t
-        ido-auto-merge-work-directories-length -1))
+    ;; This adds flex matching to ido
+    (use-package flx-ido
+      :config
+      (flx-ido-mode 1)
+      (setq ido-enable-flex-matching t
+            flx-ido-threshold 1000))
 
+    ;; Turn on ido everywhere we can
+    (ido-mode 1)
+    (ido-everywhere 1)
 
-;; Ensure backups make it to a different folder so we don't litter all
-;; our directories with them.
-(setq save-place-file (concat user-emacs-directory "places")
-      backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-;; Make it so you only need to type 'y' or 'n' not 'yes' or 'no'
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; Support the mouse and colors in the terminal
-(xterm-mouse-mode 1)
-
-(set-background-color "black")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
-)
+    (setq resize-mini-windows t
+          ido-use-virtual-buffers t
+          ido-auto-merge-work-directories-length -1)
+    )
+  )
