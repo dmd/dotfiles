@@ -1,3 +1,4 @@
+(cua-mode)
 (let ((gc-cons-threshold most-positive-fixnum))
 (setq-default inhibit-startup-screen t)
 (setq inhibit-splash-screen t)
