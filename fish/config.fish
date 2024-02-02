@@ -13,7 +13,7 @@ fish_add_path ~/bin ~/.cargo/bin ~/.local/bin /opt/homebrew/bin /usr/local/bin /
 
 alias e 'emacs -nw'
 abbr ta 'tmux attach'
-abbr j 'z'
+alias j 'z'
 abbr ... 'cd ../..'
 abbr edges 'ssh edges@3e.org'
 abbr sci 'ssh-copy-id'
@@ -65,4 +65,4 @@ if command diff --color . . >/dev/null 2>&1
     abbr diff 'diff --color'
 end
 
-
+zoxide init fish | source
