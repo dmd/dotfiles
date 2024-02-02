@@ -40,6 +40,15 @@ if test -d /cm/shared
     abbr dcmdump 'dcm_run dcmdump'
     abbr storescu 'dcm_run storescu'
     abbr dcmsend 'dcm_run dcmsend'
+    abbr s 'sudo bash'
+
+    if test -f /cm/shared/.cluster-name-mickey
+       alias q 'squeue -o "%.10i %.9u %.10j %.8T %.6C %12N %.10M %.20l"'
+       alias qu 'squeue -u $USER -o "%.10i %.9u %.10j %.8T %.6C %12N %.10M %.20l"'
+       alias slacct 'sacct --format JobName%15,JobID,TimelimitRaw,TotalCPU,MaxRSS,MaxVMSize,MaxPages,Elapsed,State,Nodelist --units=G'
+    else
+       alias q 'qstat -u "*"'
+    end
 end
 
 test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_integration.fish"
