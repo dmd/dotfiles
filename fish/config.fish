@@ -19,6 +19,10 @@ abbr edges 'ssh edges@3e.org'
 abbr sci 'ssh-copy-id'
 abbr s 'sudo fish'
 
+abbr gs 'git status'
+abbr gc 'git commit'
+abbr gr 'git checkout --'
+
 switch (hostname | string split -m 1 '.')[1]
     case dev
         abbr irc 'rm $HOME/.weechat/weechat.log; weechat'
