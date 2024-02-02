@@ -7,7 +7,7 @@ set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
 set -Ux FZF_DEFAULT_OPTS '--reverse --border --exact --height=50%'
 set -Ux AWS_PAGER ""
 set -Ux TERM xterm-256color
-set -Ux STARSHIP_CONFIG $HOME/dotfiles/starship.toml
+set -gx STARSHIP_CONFIG $HOME/dotfiles/starship.toml
 
 fish_add_path ~/bin ~/.cargo/bin ~/.local/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
 
