@@ -1,3 +1,5 @@
+command_timeout = 2000
+
 [character]
 success_symbol = "[\\$](bold green)"
 
@@ -25,3 +27,4 @@ disabled = true
 
 [battery]
 disabled = true
+
