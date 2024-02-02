@@ -1,7 +1,7 @@
 (let ((gc-cons-threshold most-positive-fixnum))
   (add-hook 'after-init-hook
             (lambda () (setq gc-cons-threshold 1600000)))
-  (cua-mode)
+;;  (cua-mode)
   (setq initial-major-mode 'fundamental-mode)
   (setq-default inhibit-startup-screen t)
   (setq inhibit-splash-screen t)
