@@ -131,3 +131,10 @@ export TERM=xterm-256color
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export STARSHIP_CONFIG=$HOME/dotfiles/starship.toml
 eval "$(starship init zsh)"
+
+# run fish if we're not in a nomachine login
+if [ -d /cm/shared ]; then
+   if [[ -z "$NX_SESSION_ID" ]]; then
+    exec fish -l
+   fi
+fi
