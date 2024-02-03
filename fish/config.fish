@@ -68,5 +68,5 @@ end
 if command diff --color . . >/dev/null 2>&1
     abbr diff 'diff --color'
 end
-
+fish_config theme choose "ayu Dark"
 zoxide init fish | source
