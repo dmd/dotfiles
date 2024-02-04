@@ -14,6 +14,7 @@ fish_add_path ~/bin ~/.cargo/bin ~/.local/bin /opt/homebrew/bin /usr/local/bin /
 abbr e 'emacs -nw'
 abbr ta 'tmux attach'
 alias j 'z'
+alias ji 'zi'
 abbr ... 'cd ../..'
 abbr edges 'ssh edges@3e.org'
 abbr sci 'ssh-copy-id'
