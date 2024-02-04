@@ -50,6 +50,7 @@ if test -d /cm/shared
        alias q 'squeue -o "%.10i %.9u %.10j %.8T %.6C %12N %.10M %.20l"'
        alias qu 'squeue -u $USER -o "%.10i %.9u %.10j %.8T %.6C %12N %.10M %.20l"'
        alias slacct 'sacct --format JobName%15,JobID,TimelimitRaw,TotalCPU,MaxRSS,MaxVMSize,MaxPages,Elapsed,State,Nodelist --units=G'
+       eval /cm/shared/anaconda3/bin/conda "shell.fish" "hook" $argv | source
     else
        alias q 'qstat -u "*"'
     end
