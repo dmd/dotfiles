@@ -16,7 +16,7 @@ abbr e 'emacs -nw'
 abbr gc 'git commit'
 abbr gr 'git checkout --'
 abbr gs 'git status'
-abbr --show s > /dev/null 2>&1; or abbr s 'sudo fish' # don't override cluster snippet
+abbr --query s ; or abbr s 'sudo fish' # don't override cluster snippet
 abbr sci 'ssh-copy-id'
 abbr ta 'tmux attach'
 alias j 'z'
