@@ -30,8 +30,7 @@ switch (hostname | string split -m 1 '.')[1]
     case dev
         abbr irc 'rm $HOME/.weechat/weechat.log; weechat'
     case atto zepto dromedary ddrucker-mba ogawa
-        abbr m 'ssh ddrucker@micc.mclean.harvard.edu -t "sh -c \'exec fish -li\'"'
-        abbr mk 'ssh ddrucker@mickey.mclean.harvard.edu -t "sh -c \'exec fish -li\'"'
+        abbr m 'ssh ddrucker@mickey.mclean.harvard.edu'
         abbr n 'ssh root@nisaba.mclean.harvard.edu'
         abbr x 'ssh root@x5backup.mclean.harvard.edu'
         abbr o 'ssh ddrucker@ogawa.mclean.harvard.edu'
