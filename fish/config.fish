@@ -36,6 +36,8 @@ switch (hostname | string split -m 1 '.')[1]
         abbr x 'ssh root@x5backup.mclean.harvard.edu'
         abbr o 'ssh ddrucker@ogawa.mclean.harvard.edu'
         abbr pluto 'ssh ddrucker@pluto.mclean.harvard.edu'
+    case mickey
+        abbr ssj 'scontrol show job'
 end
 
 test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_integration.fish"
