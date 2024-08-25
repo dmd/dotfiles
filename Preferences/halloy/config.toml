@@ -16,7 +16,7 @@ alignment = "right"
 nickname = "dmd/slashnet"
 server = "eco.3e.org"
 port = 7777
-nick_password_file = "slashnet_password"
+password_file = "/Users/dmd/Library/Application Support/halloy/slashnet_password"
 
 [servers.undernet]
 nickname = "dmd"
