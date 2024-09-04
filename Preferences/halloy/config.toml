@@ -12,6 +12,13 @@ family = "Monaco"
 [sidebar]
 position = "top"
 
+# vim keybindings so option-left/right work on mac
+[keyboard]
+move_up = "alt+k"
+move_down = "alt+j"
+move_left = "alt+h"
+move_right = "alt+l"
+
 [buffer.nickname]
 alignment = "right"
 show_access_levels = false
