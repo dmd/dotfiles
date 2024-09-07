@@ -1,5 +1,5 @@
 #!/bin/bash
-for host in dev.host 3e.org micc; do
-    ssh $host "cd dotfiles && git pull && vim -c 'PlugClean|PlugInstall|PlugUpdate|q|q'"
+for host in eco.3e.org 3e.org ddrucker@mickey.mclean.harvard.edu; do
+    ssh -t $host "cd dotfiles && git pull && vim -c 'PlugClean|PlugInstall|PlugUpdate|q|q'"
 done
 
