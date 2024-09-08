@@ -36,16 +36,16 @@ smart = 1800
 nickname = "dmd/slashnet"
 server = "eco.3e.org"
 port = 7777
-password_file = "/Users/dmd/Library/Application Support/halloy/slashnet_password"
+password_file = "/Users/dmd/Library/Application Support/halloy/znc_password"
 
 [servers.libera]
 nickname = "dmd/libera"
 server = "eco.3e.org"
 port = 7777
-password_file = "/Users/dmd/Library/Application Support/halloy/slashnet_password"
+password_file = "/Users/dmd/Library/Application Support/halloy/znc_password"
 
 [servers.undernet]
 nickname = "dmd/undernet"
 server = "eco.3e.org"
 port = 7777
-password_file = "/Users/dmd/Library/Application Support/halloy/slashnet_password"
+password_file = "/Users/dmd/Library/Application Support/halloy/znc_password"
