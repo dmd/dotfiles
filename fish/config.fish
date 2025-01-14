@@ -2,7 +2,6 @@ set fish_greeting
 set -x TZ America/New_York
 set -Ux EDITOR emacs
 set -Ux VISUAL $EDITOR
-set -Ux LESS -r
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
 set -Ux FZF_DEFAULT_OPTS '--reverse --border --exact --height=50%'
 set -Ux AWS_PAGER ""
