@@ -13,6 +13,7 @@ fish_add_path ~/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin /opt/
 
 abbr ... 'cd ../..'
 abbr e 'emacs -nw'
+abbr gist 'gist -c'
 abbr gc 'git commit'
 abbr gr 'git checkout --'
 abbr gs 'git status'
