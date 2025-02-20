@@ -41,8 +41,8 @@ switch (hostname | string split -m 1 '.')[1]
 end
 
 test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_integration.fish"
-zoxide init fish | source
 
+zoxide init fish | source
 set -gx STARSHIP_CONFIG $HOME/dotfiles/starship.toml
 starship init fish | source
-
+atuin init fish | source
