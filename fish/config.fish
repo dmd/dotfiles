@@ -9,7 +9,7 @@ set -Ux TERM xterm-256color
 set -x OPENAI_API_KEY (cat ~/.openai-api-key)
 fish_config theme choose "ayu Dark"
 
-fish_add_path ~/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
+fish_add_path ~/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
 
 abbr ... 'cd ../..'
 abbr e 'emacs -nw'
