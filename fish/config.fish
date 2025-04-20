@@ -20,7 +20,7 @@ abbr gs 'git status'
 abbr --query s ; or abbr s 'sudo fish' # don't override cluster snippet
 abbr sci 'ssh-copy-id'
 abbr ta 'tmux attach'
-abbr uq 'ug -% -jQ'
+abbr uq 'ug -% -jQU'
 alias j 'z'
 alias ji 'zi'
 alias ls (if test (uname) = 'Darwin'; echo 'ls -G'; else; echo 'ls --color=tty'; end)
