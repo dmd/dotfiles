@@ -8,6 +8,8 @@ set -Ux AWS_PAGER ""
 set -Ux TERM xterm-256color
 set -x OPENAI_API_KEY (cat ~/.openai-api-key)
 set -x ANTHROPIC_API_KEY (cat ~/.anthropic-api-key)
+set -x GEMINI_API_KEY (cat ~/.gemini-api-key)
+
 fish_config theme choose "ayu Dark"
 
 fish_add_path ~/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
