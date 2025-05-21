@@ -39,7 +39,7 @@ switch (hostname | string split -m 1 '.')[1]
         abbr b 'ssh root@bacula.mclean.harvard.edu'
         abbr m 'ssh ddrucker@mickey.mclean.harvard.edu'
         abbr n 'ssh root@nisaba.mclean.harvard.edu'
-        abbr x 'ssh root@x5backup.mclean.harvard.edu'
+        abbr x 'ssh root@bacula.mclean.harvard.edu'
         abbr o 'ssh ddrucker@ogawa.mclean.harvard.edu'
         abbr pluto 'ssh ddrucker@pluto.mclean.harvard.edu'
     case mickey
