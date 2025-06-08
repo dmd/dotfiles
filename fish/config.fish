@@ -12,7 +12,7 @@ set -x GEMINI_API_KEY (cat ~/.gemini-api-key)
 
 fish_config theme choose "ayu Dark"
 
-fish_add_path ~/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
+fish_add_path ~/bin /opt/homebrew/lib/ruby/gems/3.4.0/bin/ /opt/homebrew/opt/ruby/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
 
 abbr ... 'cd ../..'
 abbr e 'emacs -nw'
