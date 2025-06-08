@@ -6,9 +6,10 @@ set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
 set -Ux FZF_DEFAULT_OPTS '--reverse --border --exact --height=50%'
 set -Ux AWS_PAGER ""
 set -Ux TERM xterm-256color
-set -x OPENAI_API_KEY (cat ~/.openai-api-key)
-set -x ANTHROPIC_API_KEY (cat ~/.anthropic-api-key)
-set -x GEMINI_API_KEY (cat ~/.gemini-api-key)
+
+for svc in OPENAI ANTHROPIC GEMINI
+    set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
+end
 
 fish_config theme choose "ayu Dark"
 
