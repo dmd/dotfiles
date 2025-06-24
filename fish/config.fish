@@ -1,3 +1,11 @@
+fish_add_path ~/bin /opt/homebrew/lib/ruby/gems/3.4.0/bin/ /opt/homebrew/opt/ruby/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
+
+for svc in OPENAI ANTHROPIC GEMINI
+    set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
+end
+
+status --is-interactive; or exit 0
+
 set fish_greeting
 set -x TZ America/New_York
 set -Ux EDITOR emacs
@@ -7,13 +15,9 @@ set -Ux FZF_DEFAULT_OPTS '--reverse --border --exact --height=50%'
 set -Ux AWS_PAGER ""
 set -Ux TERM xterm-256color
 
-for svc in OPENAI ANTHROPIC GEMINI
-    set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
-end
 
 fish_config theme choose "ayu Dark"
 
-fish_add_path ~/bin /opt/homebrew/lib/ruby/gems/3.4.0/bin/ /opt/homebrew/opt/ruby/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
 
 abbr ... 'cd ../..'
 abbr e 'emacs -nw'
@@ -52,3 +56,4 @@ test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_
 zoxide init fish | source
 set -gx STARSHIP_CONFIG $HOME/dotfiles/starship.toml
 starship init fish | source
+atuin init fish | source
