@@ -4,10 +4,11 @@ for svc in OPENAI ANTHROPIC GEMINI
     set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
 end
 
+set -x TZ America/New_York
+
 status --is-interactive; or exit 0
 
 set fish_greeting
-set -x TZ America/New_York
 set -Ux EDITOR emacs
 set -Ux VISUAL $EDITOR
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
