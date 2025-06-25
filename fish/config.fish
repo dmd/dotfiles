@@ -3,7 +3,7 @@ fish_add_path ~/bin /opt/homebrew/lib/ruby/gems/3.4.0/bin/ /opt/homebrew/opt/rub
 for svc in OPENAI ANTHROPIC GEMINI
     set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
 end
-
+set -x GOOGLE_CLOUD_PROJECT dmd-ai-chat-1680813847334
 set -x TZ America/New_York
 
 status --is-interactive; or exit 0
@@ -30,6 +30,7 @@ abbr --query s ; or abbr s 'sudo fish' # don't override cluster snippet
 abbr sci 'ssh-copy-id'
 abbr ta 'tmux attach'
 abbr uq 'ug -% -jQU'
+alias gcode 'npx https://github.com/google-gemini/gemini-cli'
 alias j 'z'
 alias ji 'zi'
 alias ls (if test (uname) = 'Darwin'; echo 'ls -G'; else; echo 'ls --color=tty'; end)
