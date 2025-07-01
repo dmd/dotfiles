@@ -57,4 +57,4 @@ test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_
 zoxide init fish | source
 set -gx STARSHIP_CONFIG $HOME/dotfiles/starship.toml
 starship init fish | source
-atuin init fish | source
+atuin init fish --disable-up-arrow | source
