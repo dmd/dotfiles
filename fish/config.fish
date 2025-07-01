@@ -30,7 +30,6 @@ abbr --query s ; or abbr s 'sudo fish' # don't override cluster snippet
 abbr sci 'ssh-copy-id'
 abbr ta 'tmux attach'
 abbr uq 'ug -% -jQU'
-alias gcode 'npx https://github.com/google-gemini/gemini-cli'
 alias j 'z'
 alias ji 'zi'
 alias ls (if test (uname) = 'Darwin'; echo 'ls -G'; else; echo 'ls --color=tty'; end)
