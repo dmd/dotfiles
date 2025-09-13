@@ -37,9 +37,3 @@ nickname = "dmd/slashnet"
 server = "eco.3e.org"
 port = 7777
 password_file = "/Users/dmd/Library/Application Support/halloy/znc_password"
-
-[servers.undernet]
-nickname = "dmd"
-server = "irc.undernet.org"
-port = 6667
-use_tls = false
