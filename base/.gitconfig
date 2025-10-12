@@ -13,11 +13,21 @@
     ci = commit -a
     st = status
 [push]
-    default = matching
+    default = simple
 [branch]
     autosetuprebase = always
 [pull]
     rebase = true
+    ff = only
+[init]
+    defaultBranch = main
+[diff]
+    colorMoved = default
+    algorithm = histogram
+[rerere]
+    enabled = true
+[merge]
+    conflictstyle = zdiff3
 
 [include]
     path = ~/.gitconfig_user
