@@ -16,11 +16,8 @@ set -Ux FZF_DEFAULT_OPTS '--reverse --border --exact --height=50%'
 set -Ux AWS_PAGER ""
 set -Ux TERM xterm-256color
 
-
 fish_config theme choose "ayu Dark"
 
-
-abbr ... 'cd ../..'
 abbr e 'emacs -nw'
 abbr gist 'gist -c'
 abbr gc 'git commit'
@@ -32,24 +29,19 @@ abbr ta 'tmux attach'
 abbr uq 'ug -% -jQU'
 alias j 'z'
 alias ji 'zi'
+abbr ssj 'scontrol show job'
+
+abbr b 'ssh root@bacula.mclean.harvard.edu'
+abbr m 'ssh ddrucker@mickey.mclean.harvard.edu'
+abbr n 'ssh root@nisaba.mclean.harvard.edu'
+abbr x 'ssh root@bacula.mclean.harvard.edu'
+abbr o 'ssh ddrucker@ogawa.mclean.harvard.edu'
+abbr pluto 'ssh ddrucker@pluto.mclean.harvard.edu'
+
 alias ls (if test (uname) = 'Darwin'; echo 'ls -G'; else; echo 'ls --color=tty'; end)
 
 if command diff --color . . >/dev/null 2>&1
     abbr diff 'diff --color'
-end
-
-switch (hostname | string split -m 1 '.')[1]
-    case dev
-        abbr irc 'rm $HOME/.weechat/weechat.log; weechat'
-    case zepto dromedary ddrucker-mba ogawa bactrian
-        abbr b 'ssh root@bacula.mclean.harvard.edu'
-        abbr m 'ssh ddrucker@mickey.mclean.harvard.edu'
-        abbr n 'ssh root@nisaba.mclean.harvard.edu'
-        abbr x 'ssh root@bacula.mclean.harvard.edu'
-        abbr o 'ssh ddrucker@ogawa.mclean.harvard.edu'
-        abbr pluto 'ssh ddrucker@pluto.mclean.harvard.edu'
-    case mickey
-        abbr ssj 'scontrol show job'
 end
 
 test -e "$HOME/.iterm2_shell_integration.fish"; and source "$HOME/.iterm2_shell_integration.fish"
