@@ -1,0 +1,13 @@
+font-family = Monaco Nerd Font Mono
+font-size = 15
+adjust-cell-height = 1
+adjust-cell-width = -1
+
+macos-titlebar-style = tabs
+shell-integration-features = ssh-env,ssh-terminfo,sudo, no-cursor
+
+background = #242424
+minimum-contrast = 3
+
+cursor-style = block
+cursor-color = gray
