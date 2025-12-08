@@ -10,7 +10,7 @@ adjust-cell-width = -1
 macos-titlebar-style = tabs
 
 # Shell
-shell-integration-features = "ssh-env,ssh-terminfo,sudo,no-cursor"
+shell-integration-features = "ssh-env,sudo,no-cursor"
 
 # Colors
 background = #242424
