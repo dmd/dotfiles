@@ -1,13 +1,24 @@
-font-family = Monaco Nerd Font Mono
+# Fonts
+font-family = "Monaco Nerd Font Mono"
 font-size = 15
+
+# Advanced
 adjust-cell-height = 1
 adjust-cell-width = -1
 
+# Macos
 macos-titlebar-style = tabs
-shell-integration-features = ssh-env,ssh-terminfo,sudo, no-cursor
 
+# Shell
+shell-integration-features = "ssh-env,ssh-terminfo,sudo,no-cursor"
+
+# Colors
 background = #242424
 minimum-contrast = 3
-
-cursor-style = block
 cursor-color = gray
+
+# Cursor
+cursor-style = block
+
+# Keybinds
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
