@@ -5,6 +5,7 @@ font-size = 15
 # Advanced
 adjust-cell-height = 1
 adjust-cell-width = -1
+clipboard-paste-protection = false
 
 # Macos
 macos-titlebar-style = tabs
