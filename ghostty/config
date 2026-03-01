@@ -17,9 +17,11 @@ shell-integration-features = "ssh-env,sudo,no-cursor"
 background = #242424
 minimum-contrast = 3
 cursor-color = gray
+split-divider-color = #ffb663
 
 # Cursor
 cursor-style = block
 
 # Keybinds
 keybind = shift+enter=text:\x1b\r
+
