@@ -1,6 +1,6 @@
 fish_add_path ~/bin /opt/homebrew/lib/ruby/gems/3.4.0/bin/ /opt/homebrew/opt/ruby/bin /opt/homebrew/opt/rustup/bin ~/.cargo/bin ~/.local/bin ~/.atuin/bin /opt/homebrew/bin /usr/local/bin /sbin /usr/local/sbin
 
-for svc in OPENAI ANTHROPIC GEMINI
+for svc in SCANDIUM ANTHROPIC GEMINI
     set -x $svc"_API_KEY" (cat ~/.apikeys/$svc"_API_KEY")
 end
 set -x GOOGLE_CLOUD_PROJECT dmd-ai-chat-1680813847334
