@@ -27,6 +27,8 @@ abbr --query s ; or abbr s 'sudo fish' # don't override cluster snippet
 abbr sci 'ssh-copy-id'
 abbr ta 'tmux attach'
 abbr uq 'ug -% -jQU'
+abbr unlock ' security unlock-keychain ~/Library/Keychains/login.keychain-db'
+
 alias j 'z'
 alias ji 'zi'
 abbr ssj 'scontrol show job'
