@@ -1,0 +1,31 @@
+{
+  "cleanupPeriodDays": 999,
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/dmd/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "python-development@claude-code-workflows": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
+  "env": {
+        "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
+  }
+}
